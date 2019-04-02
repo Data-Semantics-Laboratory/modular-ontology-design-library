@@ -2,4 +2,6 @@
 *.aux
 *.bibl
 *.out
-*.synctex(busy)
+*.synctex*
+*.toc
+*.lof
