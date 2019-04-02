@@ -1,0 +1,380 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.daselab.org/semtraj#"
+     xml:base="http://www.daselab.org/semtraj"
+     xmlns:opla="http://ontologydesignpatterns.org/opla#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.daselab.org/semtraj"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.daselab.org/semtraj#endsAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#endsAt"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#hasAttribute"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#hasCreator -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#hasCreator"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#hasFix -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#hasFix">
+        <owl:inverseOf rdf:resource="http://www.daselab.org/semtraj#inverseHasFix"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#hasSegment"/>
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#endsAt"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#hasSegment"/>
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#startsFrom"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#hasLocation"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#hasNext -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#hasNext">
+        <rdfs:subPropertyOf rdf:resource="http://www.daselab.org/semtraj#hasSuccessor"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#hasSuccessor"/>
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#hasSuccessor"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.daselab.org/semtraj#startsFrom"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#endsAt"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#hasPredecessor -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#hasPredecessor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.daselab.org/semtraj#hasSuccessor"/>
+            </rdf:Description>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#hasPrevious -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#hasPrevious">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.daselab.org/semtraj#hasNext"/>
+            </rdf:Description>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#hasSegment -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#hasSegment">
+        <owl:inverseOf rdf:resource="http://www.daselab.org/semtraj#inverseHasSegment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#hasSuccessor -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#hasSuccessor"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#inverseHasFix -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#inverseHasFix"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#inverseHasSegment -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#inverseHasSegment"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#isTraversedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#isTraversedBy"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#startsFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.daselab.org/semtraj#startsFrom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.daselab.org/semtraj#atTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.daselab.org/semtraj#atTime"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.daselab.org/semtraj#Attribute -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#Attribute"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#EndingFix -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#EndingFix"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#EndingSegment -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#EndingSegment"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#Fix -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#Fix"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#MovingObject -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#MovingObject"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#Position -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#Position"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#Segment -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#Segment">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#endsAt"/>
+                        <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#Fix"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#startsFrom"/>
+                        <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#Fix"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.daselab.org/semtraj#hasSegment"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#SemanticTrajectory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#SemanticTrajectory -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#SemanticTrajectory">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#hasSegment"/>
+                <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#Segment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#Source -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#Source"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#StartingFix -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#StartingFix"/>
+    
+
+
+    <!-- http://www.daselab.org/semtraj#StartingSegment -->
+
+    <owl:Class rdf:about="http://www.daselab.org/semtraj#StartingSegment"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#endsAt"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#startsFrom"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#Fix"/>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://www.daselab.org/semtraj#endsAt"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#Segment"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.daselab.org/semtraj#StartingFix"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#Fix"/>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://www.daselab.org/semtraj#startsFrom"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#Segment"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.daselab.org/semtraj#EndingFix"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#Segment"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#endsAt"/>
+                <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#EndingFix"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.daselab.org/semtraj#EndingSegment"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.daselab.org/semtraj#Segment"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#startsFrom"/>
+                <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#StartingFix"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.daselab.org/semtraj#StartingSegment"/>
+    </owl:Class>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#hasFix"/>
+        <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#Segment"/>
+        <rdfs:subClassOf rdf:resource="http://www.daselab.org/semtraj#SemanticTrajectory"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#hasSegment"/>
+        <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#Segment"/>
+        <rdfs:subClassOf rdf:resource="http://www.daselab.org/semtraj#SemanticTrajectory"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#inverseHasFix"/>
+        <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#SemanticTrajectory"/>
+        <rdfs:subClassOf rdf:resource="http://www.daselab.org/semtraj#Fix"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.daselab.org/semtraj#inverseHasSegment"/>
+        <owl:someValuesFrom rdf:resource="http://www.daselab.org/semtraj#SemanticTrajectory"/>
+        <rdfs:subClassOf rdf:resource="http://www.daselab.org/semtraj#Segment"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
