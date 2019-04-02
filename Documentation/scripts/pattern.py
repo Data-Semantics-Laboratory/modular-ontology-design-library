@@ -72,6 +72,8 @@ with open(file_name, 'w') as f:
     f.write(barrier * 2 + "\n")
     f.write(barrier * 2)
 
+    f.write("\\newpage")
+
 with open("../patterns.tex",'a') as f:
     f.write("\\input{"+loc_file_name+"}\n")
 
