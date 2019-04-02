@@ -1,0 +1,31 @@
+\documentclass[11pt,oneside, letterpaper]{memoir}
+
+\input{preamble}
+\sloppy
+
+\counterwithin*{equation}{section}
+%\counterwithin*{equation}{subsection}
+
+\begin{document}
+
+\frontmatter
+\begin{titlingpage}
+  \titleBWF
+\end{titlingpage}
+
+{\small
+\tableofcontents{}
+\newpage
+\listoffigures{}
+}
+
+\mainmatter
+
+\input{introduction}
+\input{patterns}
+%\input{ontology}
+
+\bibliographystyle{abbrv}
+\bibliography{lit}
+
+\end{document}

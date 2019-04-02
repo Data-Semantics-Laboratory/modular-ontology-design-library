@@ -1,0 +1,448 @@
+\setlrmarginsandblock{1in}{1in}{*}
+\setulmarginsandblock{1in}{1in}{*}
+\checkandfixthelayout
+
+\usepackage{graphicx}
+
+\usepackage{mathtools,amssymb}
+\allowdisplaybreaks[1]
+\usepackage{url}
+\usepackage{paralist}
+\usepackage{hyperref}
+\usepackage{parskip}
+\tightlists
+
+% \renewcommand*\familydefault{\sfdefault}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\linespread{1.025}
+\let\oldtextlangle\textlangle
+\renewcommand{\textlangle}{{\fontfamily{pxr}\selectfont\oldtextlangle}}
+\let\oldtextrangle\textrangle
+\renewcommand{\textrangle}{{\fontfamily{pxr}\selectfont\oldtextrangle}}
+
+% \usepackage[euler-digits,small]{eulervm}
+% \AtBeginDocument{\renewcommand{\hbar}{\hslash}}
+
+\setverbatimfont{\sffamily}
+
+\renewcommand{\theequation}{\arabic{equation}}
+
+\newlength{\drop}% for my convenience
+\newcommand*{\titleBWF}{\begingroup% Beowulf
+\drop = 0.1\textheight
+\parindent=0pt
+\vspace*{\drop}
+{\Huge\bfseries MODL: A Modular Ontology Design \\Library}\\
+[\baselineskip]
+Early draft, do not distribute
+
+\vspace*{0.5\drop}
+{\Large {\itshape Contributors:}}\\
+{\large{\scshape Cogan Shimizu} --- Wright State University}\\
+{\large{\scshape Pascal Hitzler} --- Wright State University}\\
+{\large{\scshape Quinn Hirt} --- Wright State University}\\[\baselineskip]
+
+{\large {\itshape Document Date:} \today}
+
+\vfill
+
+{ Acknowledgement.}
+
+
+% \vfill
+% \plogo\\[0.2\baselineskip]
+% {\Large\itshape The Publisher}
+% \vspace*{\drop}
+\endgroup}
+
+%% Setup for page layout and style
+\setsecnumdepth{subsubsection}
+% \settocdepth{section}
+\maxtocdepth{section}
+\chapterstyle{tandh}
+\pagestyle{simple}
+
+%% shorcuts
+\newcommand{\dom}{\mathsf{dom}}
+\newcommand{\ran}{\mathsf{range}}
+\newcommand{\card}{\mathsf{card}}
+\newcommand\la{\text{\textlangle}}
+\newcommand\ra{\text{\textrangle}}
+\newcommand{\equ}{\mathord{=}}
+\newcommand{\gte}{\mathord{\geqslant}}
+\newcommand{\lte}{\mathord{\leqslant}}
+\newcommand{\ordcolon}{\mathord{:}}
+\newcommand{\underscore}{\_}
+\newcommand{\Self}{\mathsf{Self}}
+\newcommand{\haskey}{\operatorname{\mathsf{\underline{haskey}}}}
+
+%% namespace shortcuts
+\newcommand{\xsd}{xsd{\operatorname{:}}}
+\newcommand{\rdf}{rdf{\operatorname{:}}}
+\newcommand{\rdfs}{rdfs{\operatorname{:}}}
+\newcommand{\dcterms}{dcterms{\operatorname{:}}}
+\newcommand{\owltime}{time{\operatorname{:}}}
+\newcommand{\owltimeIRI}{http://www.w3.org/2006/time\#}
+\newcommand{\owl}{owl{\operatorname{:}}}
+\newcommand{\org}{org{\operatorname{:}}}
+\newcommand{\foaf}{foaf{\operatorname{:}}}
+
+\newcommand{\geolinkdev}{http://schema.geolink.org/dev/}
+\newcommand{\geolinkone}{http://schema.geolink.org/1.0/}
+\newcommand{\geolink}{\geolinkdev}
+
+\newcommand{\geolinkvocdev}{http://schema.geolink.org/voc/dev/}
+\newcommand{\geolinkvocone}{http://schema.geolink.org/voc/1.0/}
+\newcommand{\geolinkvoc}{\geolinkvocdev}
+
+
+%% Class and property name shorcuts
+%% Used across patterns
+\newcommand{\owlThing}{\mathsf{\owl Thing}}
+\newcommand{\xsdstring}{\mathsf{\xsd string}}
+\newcommand{\xsddecimal}{\mathsf{\xsd decimal}}
+\newcommand{\xsdfloat}{\mathsf{\xsd float}}
+\newcommand{\xsddouble}{\mathsf{\xsd double}}
+\newcommand{\xsdanyuri}{\mathsf{\xsd anyURI}}
+\newcommand{\rdfPlainLiteral}{\mathsf{\rdf PlainLiteral}}
+\newcommand{\rdfsseeAlso}{\mathsf{\rdfs seeAlso}}
+\newcommand{\owltimeInstant}{\mathsf{\owltime Instant}}
+\newcommand{\owltimeInterval}{\mathsf{\owltime Interval}}
+\newcommand{\owltimeTemporalEntity}{\mathsf{\owltime TemporalEntity}}
+
+\newcommand{\TimeInstant}{\mathsf{TimeInstant}}
+\newcommand{\TimeEntity}{\mathsf{TimeEntity}}
+
+\newcommand{\timeOccurs}{\mathsf{occursAtTime}}
+\newcommand{\timeStarts}{\mathsf{startsAtTime}}
+\newcommand{\timeEnds}{\mathsf{endsAtTime}}
+\newcommand{\dateOccurs}{\mathsf{occursOnDate}}
+\newcommand{\dateStarts}{\mathsf{startsOnDate}}
+\newcommand{\dateEnds}{\mathsf{endsOnDate}}
+\newcommand{\monthOccurs}{\mathsf{occursInMonth}}
+\newcommand{\monthStarts}{\mathsf{startsInMonth}}
+\newcommand{\monthEnds}{\mathsf{endsInMonth}}
+\newcommand{\yearOccurs}{\mathsf{occursInYear}}
+\newcommand{\yearStarts}{\mathsf{startsInYear}}
+\newcommand{\yearEnds}{\mathsf{endsInYear}}
+
+\newcommand{\occursAtPlace}{\mathsf{occursAtPlace}}
+
+\newcommand{\hasLiteralValue}{\mathsf{hasLiteralValue}}
+\newcommand{\hasValue}{\mathsf{hasValue}}
+
+
+%% Agent pattern class
+\newcommand{\Agent}{\mathsf{Agent}}
+\newcommand{\performsAgentRole}{\mathsf{performsAgentRole}} 
+
+%% AgentRole pattern
+\newcommand{\AgentRole}{\mathsf{AgentRole}}
+\newcommand{\AgentRoleType}{\mathsf{AgentRoleType}}
+\newcommand{\isPerformedBy}{\mathsf{isPerformedBy}}
+\newcommand{\hasAgentRoleType}{\mathsf{hasAgentRoleType}}
+\newcommand{\isAgentRoleIn}{\mathsf{isAgentRoleIn}}
+\newcommand{\providesAgentRole}{\mathsf{providesAgentRole}}
+\newcommand{\providesAgentRoleType}{\mathsf{providesAgentRoleType}}
+
+
+
+%% Event pattern stub
+\newcommand{\Activity}{\mathsf{Activity}}
+\newcommand{\Event}{\mathsf{Event}}
+\newcommand{\ActivityType}{\mathsf{ActivityType}}
+\newcommand{\EventType}{\mathsf{EventType}}
+\newcommand{\hasActor}{\mathsf{hasActor}}
+\newcommand{\hasActivityType}{\mathsf{hasActivityType}}
+\newcommand{\hasEventType}{\mathsf{hasEventType}}
+\newcommand{\happensDuring}{\mathsf{happensDuring}}
+
+%% Person pattern
+\newcommand{\Person}{\mathsf{Person}}
+\newcommand{\BirthEvent}{\mathsf{BirthEvent}}
+\newcommand{\Credential}{\mathsf{Credential}}
+\newcommand{\hasBirthEvent}{\mathsf{hasBirthEvent}}
+\newcommand{\isBirthEventOf}{\mathsf{isBirthEventOf}}
+\newcommand{\hasBirthplace}{\mathsf{hasBirthplace}}
+\newcommand{\hasBirthday}{\mathsf{hasBirthday}}
+\newcommand{\hasPersonalInfoItem}{\mathsf{hasPersonalInfoItem}}
+\newcommand{\hasCredential}{\mathsf{hasCredential}}
+
+
+
+%% PersonalInfoItem pattern
+\newcommand{\PersonalInfoItem}{\mathsf{PersonalInfoItem}}
+\newcommand{\PersonalInfoType}{\mathsf{PersonalInfoType}}
+\newcommand{\PersonalInfoValue}{\mathsf{PersonalInfoValue}}
+\newcommand{\isPersonalInfoItemOf}{\mathsf{isPersonalInfoItemOf}}
+\newcommand{\hasPersonalInfoType}{\mathsf{hasPersonalInfoType}}
+\newcommand{\hasPersonalInfoValue}{\mathsf{hasPersonalInfoValue}}
+\newcommand{\hasAllowedValue}{\mathsf{hasAllowedValue}}
+
+%% PersonName pattern
+\newcommand{\PersonName}{\mathsf{PersonName}}
+\newcommand{\fullNameAsString}{\mathsf{fullNameAsString}}
+\newcommand{\firstOrGivenName}{\mathsf{firstOrGivenName}}
+\newcommand{\familyOrSurname}{\mathsf{familyOrSurname}}
+\newcommand{\personSurname}{\mathsf{personSurname}}
+\newcommand{\personGivenName}{\mathsf{personGivenName}}
+\newcommand{\hasPersonName}{\mathsf{hasPersonName}}
+
+%% AgentAffiliation pattern
+\newcommand{\AgentAffiliation}{\mathsf{AgentAffiliation}}
+\newcommand{\PersonAffiliation}{\mathsf{PersonAffiliation}}
+\newcommand{\OrganizationAffiliation}{\mathsf{OrganizationAffiliation}}
+\newcommand{\hasAffiliation}{\mathsf{hasAffiliation}}
+
+%% Information object pattern stub
+\newcommand{\InformationObject}{\mathsf{InformationObject}}
+\newcommand{\isDescribedBy}{\mathsf{isDescribedBy}}
+\newcommand{\hasCanonicalName}{\mathsf{hasCanonicalName}}
+\newcommand{\alsoKnownAs}{\mathsf{alsoKnownAs}}
+\newcommand{\hasDescription}{\mathsf{hasDescription}}
+\newcommand{\hasWebpage}{\mathsf{hasWebpage}}
+\newcommand{\seeAlso}{\mathsf{seeAlso}}
+\newcommand{\InformationRealization}{\mathsf{InformationRealization}}
+\newcommand{\isAbout}{\mathsf{isAbout}}
+\newcommand{\isRealizedBy}{\mathsf{isRealizedBy}}
+
+\newcommand{\Identifier}{\mathsf{Identifier}}
+\newcommand{\hasIdentifierValue}{\mathsf{hasIdentifierValue}}
+\newcommand{\hasIdentifierScheme}{\mathsf{hasIdentifierScheme}}
+
+%% Organization pattern
+\newcommand{\Organization}{\mathsf{Organization}}
+\newcommand{\hasSubOrganization}{\mathsf{hasSubOrganization}}
+
+%% Place pattern
+\newcommand{\Place}{\mathsf{Place}}
+\newcommand{\hasSpatialFootprint}{\mathsf{hasSpatialFootprint}}
+
+%% Geometry pattern
+\newcommand{\Geometry}{\mathsf{Geometry}}
+
+
+%% Cruise pattern
+\newcommand{\Cruise}{\mathsf{Cruise}}
+\newcommand{\Trajectory}{\mathsf{Trajectory}}
+\newcommand{\Segment}{\mathsf{Segment}}
+\newcommand{\Fix}{\mathsf{Fix}}
+\newcommand{\Attribute}{\mathsf{Attribute}}
+\newcommand{\Position}{\mathsf{Position}}
+\newcommand{\Port}{\mathsf{Port}}
+\newcommand{\StartingFix}{\mathsf{StartingFix}}
+\newcommand{\EndingFix}{\mathsf{EndingFix}}
+\newcommand{\isUndertakenBy}{\mathsf{isUndertakenBy}}
+\newcommand{\hasTrajectory}{\mathsf{hasTrajectory}}
+\newcommand{\isTraveledBy}{\mathsf{isTraveledBy}}
+\newcommand{\hasFix}{\mathsf{hasFix}}
+\newcommand{\nextFix}{\mathsf{nextFix}}
+\newcommand{\hasSegment}{\mathsf{hasSegment}}
+\newcommand{\hasAttribute}{\mathsf{hasAttribute}}
+\newcommand{\isTraversedBy}{\mathsf{isTraversedBy}}
+\newcommand{\hasLocation}{\mathsf{hasLocation}}
+\newcommand{\atTime}{\mathsf{atTime}}
+\newcommand{\atPort}{\mathsf{atPort}}
+\newcommand{\segmentStartsFrom}{\mathsf{startsFrom}}
+\newcommand{\segmentEndsAt}{\mathsf{endsAt}}
+\newcommand{\canReach}{\mathsf{canReach}}
+
+\newcommand{\CruiseAgentRoleType}{\mathsf{CruiseAgentRoleType}}
+\newcommand{\hasRelatedID}{\mathsf{hasRelatedID}}
+\newcommand{\hasCruiseType}{\mathsf{hasCruiseType}}
+
+\newcommand{\CruiseInfoObj}{\mathsf{CruiseInformationObject}}
+\newcommand{\CruiseInformationObject}{\CruiseInfoObj}
+\newcommand{\CruiseType}{\mathsf{CruiseType}}
+
+
+%% Deployment pattern
+\newcommand{\Deployment}{\mathsf{Deployment}}
+
+%% Platform pattern
+\newcommand{\Platform}{\mathsf{Platform}}
+\newcommand{\PlatformType}{\mathsf{PlatformType}}
+\newcommand{\hasPlatformType}{\mathsf{hasPlatformType}}
+\newcommand{\SeaVoXLOSix}{\mathsf{SeaVoXL06}}
+% \newcommand{\SeaVoXLOSixKey}{\mathsf{SeaVoXL06Key}}
+% \newcommand{\SeaVoXLOSixTerm}{\mathsf{SeaVoXL06Term}}
+\newcommand{\hasSeaVoXLOSixKey}{\mathsf{hasSeaVoXL06Key}}
+\newcommand{\hasSeaVoXLOSixTerm}{\mathsf{hasSeaVoXL06Term}}
+
+
+%% Vessel pattern 
+\newcommand{\Vessel}{\mathsf{Vessel}}
+\newcommand{\VesselAgentRoleType}{\mathsf{VesselAgentRoleType}}
+\newcommand{\VesselInfoObject}{\mathsf{VesselInformationObject}}
+\newcommand{\VesselInformationObject}{\VesselInfoObject}
+\newcommand{\VesselID}{\mathsf{VesselID}}
+\newcommand{\VesselIDScheme}{\mathsf{VesselIDScheme}}
+\newcommand{\VesselPlatformType}{\mathsf{VesselPlatformType}}
+\newcommand{\Quantity}{\mathsf{Quantity}}
+\newcommand{\QuantityValue}{\mathsf{QuantityValue}}
+\newcommand{\QuantityKind}{\mathsf{QuantityKind}}
+\newcommand{\QuantityUnit}{\mathsf{QuantityUnit}}
+\newcommand{\hasVesselID}{\mathsf{hasVesselID}}
+\newcommand{\hasVesselIDScheme}{\mathsf{hasVesselIDScheme}}
+\newcommand{\hasVesselIDValue}{\mathsf{hasVesselIDValue}}
+\newcommand{\hasVesselIDProvider}{\mathsf{hasVesselIDProvider}}
+\newcommand{\hasIMONumber}{\mathsf{hasIMONumber}}
+\newcommand{\hasVesselOwner}{\mathsf{hasVesselOwner}}
+\newcommand{\hasVesselPlatformType}{\mathsf{hasVesselPlatformType}}
+\newcommand{\hasCommissioningYear}{\mathsf{hasCommissioningYear}}
+\newcommand{\hasObservableProperty}{\mathsf{hasObservableProperty}}
+\newcommand{\hasQuantityValue}{\mathsf{hasQuantityValue}}
+\newcommand{\hasQuantityUnit}{\mathsf{hasQuantityUnit}}
+\newcommand{\hasQuantityKind}{\mathsf{hasQuantityKind}}
+\newcommand{\hasQuantityValueNumeric}{\mathsf{hasQuantityValueNumeric}}
+
+\newcommand{\Property}{\mathsf{Property}}
+\newcommand{\PropertyUnit}{\mathsf{PropertyUnit}}
+\newcommand{\hasProperty}{\mathsf{hasProperty}}
+\newcommand{\hasPropertyName}{\mathsf{hasPropertyName}}
+\newcommand{\hasPropertyValue}{\mathsf{hasPropertyValue}}
+\newcommand{\hasUnit}{\mathsf{hasUnit}}
+
+%% FundingAward pattern classes
+\newcommand{\FundingAward}{\mathsf{FundingAward}}
+\newcommand{\AwardAmount}{\mathsf{AwardAmount}}
+\newcommand{\CurrencyCode}{\mathsf{CurrencyCode}}
+\newcommand{\FundingAwardInfoObj}{\mathsf{FundingAwardInformationObject}}
+\newcommand{\hasAwardID}{\mathsf{hasAwardID}}
+\newcommand{\hasStartDate}{\mathsf{hasStartDate}}
+\newcommand{\hasEndDate}{\mathsf{hasEndDate}}
+\newcommand{\hasAwardAmount}{\mathsf{hasAwardAmount}}
+\newcommand{\hasCurrencyValue}{\mathsf{hasCurrencyValue}}
+\newcommand{\hasCurrencyCode}{\mathsf{hasCurrencyCode}}
+\newcommand{\hasFundingAgent}{\mathsf{hasFundingAgent}}
+\newcommand{\hasProgramManager}{\mathsf{hasProgramManager}}
+\newcommand{\hasPrincipalInvestigator}{\mathsf{hasPrincipalInvestigator}}
+\newcommand{\isFundedBy}{\mathsf{isFundedBy}}
+\newcommand{\hasDescriptionDocument}{\mathsf{hasDescriptionDocument}}
+
+
+%% Program pattern 
+\newcommand{\Program}{\mathsf{Program}}
+\newcommand{\isAssociatedWithProgram}{\mathsf{isAssociatedWithProgram}}
+\newcommand{\hasDataManager}{\mathsf{hasDataManager}}
+\newcommand{\hasCoPrincipalInvestigator}{\mathsf{hasCoPrincipalInvestigator}}
+
+%% DigitalObjectRecord pattern
+\newcommand{\DigitalObjectRecord}{\mathsf{DigitalObjectRecord}}
+\newcommand{\DigitalObjectRecordID}{\mathsf{DigitalObjectRecordID}}
+\newcommand{\DigitalObjectRecordIDScheme}{\mathsf{DigitalObjectRecordIDScheme}}
+\newcommand{\Repository}{\mathsf{Repository}}
+\newcommand{\containsSF}{\mathsf{contains}}
+
+
+\newcommand{\hasAbstract}{\mathsf{hasAbstract}}
+\newcommand{\hasKeyword}{\mathsf{hasKeyword}}
+\newcommand{\hasSubject}{\mathsf{hasSubject}}
+\newcommand{\hasScienceTheme}{\mathsf{hasScienceTheme}}
+\newcommand{\hasLanguageSpecifier}{\mathsf{hasLanguageSpecifier}}
+\newcommand{\hasDigitalObjectRecordTitle}{\mathsf{hasDigitalObjectRecordTitle}}
+\newcommand{\hasDigitalObjectRecordID}{\mathsf{hasDigitalObjectRecordID}}
+\newcommand{\hasDigitalObjectRecordIDScheme}{\mathsf{hasDigitalObjectRecordIDScheme}}
+\newcommand{\hasDigitalObjectRecordIDValue}{\mathsf{hasDigitalObjectRecordIDValue}}
+\newcommand{\belongsTo}{\mathsf{belongsTo}}
+\newcommand{\isAssociatedWithCruise}{\mathsf{isAssociatedWithCruise}}
+\newcommand{\isCreatedOn}{\mathsf{isCreatedOn}}
+\newcommand{\isIssuedOn}{\mathsf{isIssuedOn}}
+\newcommand{\isReleasedOn}{\mathsf{isReleasedOn}}
+\newcommand{\hasDigitalObjectRecordRelationTo}{\mathsf{hasDigitalObjectRecordRelationTo}}
+
+% \newcommand{\hasOriginatorList}{\mathsf{hasOriginatorList}}
+% \newcommand{\OriginatorList}{\mathsf{OriginatorList}}
+\newcommand{\OriginatorRole}{\mathsf{OriginatorRole}}
+\newcommand{\hasOriginatorRole}{\mathsf{hasOriginatorRole}}
+\newcommand{\hasOriginator}{\mathsf{hasOriginator}}
+\newcommand{\hasFirstOriginatorRole}{\mathsf{hasFirstOriginatorRole}}
+\newcommand{\hasFirstOriginator}{\mathsf{hasFirstOriginator}}
+\newcommand{\nextOriginatorRole}{\mathsf{nextOriginatorRole}}
+\newcommand{\CreatorRole}{\mathsf{CreatorRole}}
+\newcommand{\hasCreator}{\mathsf{hasCreator}}
+\newcommand{\hasFirstCreator}{\mathsf{hasFirstCreator}}
+\newcommand{\hasCreatorRole}{\mathsf{hasCreatorRole}}
+\newcommand{\hasFirstCreatorRole}{\mathsf{hasFirstCreatorRole}}
+\newcommand{\nextCreatorRole}{\mathsf{nextCreatorRole}}
+\newcommand{\ContributorRole}{\mathsf{ContributorRole}}
+\newcommand{\hasContributor}{\mathsf{hasContributor}}
+\newcommand{\hasFirstContributor}{\mathsf{hasFirstContributor}}
+\newcommand{\hasContributorRole}{\mathsf{hasContributorRole}}
+\newcommand{\hasFirstContributorRole}{\mathsf{hasFirstContributorRole}}
+\newcommand{\nextContributorRole}{\mathsf{nextContributorRole}}
+\newcommand{\PublisherRole}{\mathsf{PublisherRole}}
+\newcommand{\hasPublisher}{\mathsf{hasPublisher}}
+\newcommand{\hasPublisherRole}{\mathsf{hasPublisherRole}}
+
+
+%% DataFileSet pattern
+\newcommand{\DataFileSet}{\mathsf{DataFileSet}}
+\newcommand{\contains}{\mathsf{contains}}
+\newcommand{\isCreatedByProcess}{\mathsf{isCreatedByProcess}}
+\newcommand{\isCreatedByInstrument}{\mathsf{isCreatedByInstrument}}
+\newcommand{\providesObservationFor}{\mathsf{providesObservationFor}}
+\newcommand{\isSetDownloadableAt}{\mathsf{isSetDownloadableAt}}
+\newcommand{\hasSpatialExtent}{\mathsf{hasSpatialExtent}}
+\newcommand{\hasTemporalExtent}{\mathsf{hasTemporalExtent}}
+
+
+
+%% File & DataFile patterns
+\newcommand{\DataFile}{\mathsf{DataFile}}
+\newcommand{\File}{\mathsf{File}}
+\newcommand{\FileAttribute}{\mathsf{FileAttribute}}
+\newcommand{\FileAttributeKind}{\mathsf{FileAttributeKind}}
+\newcommand{\FileAttributeValue}{\mathsf{FileAttributeValue}}
+\newcommand{\FileAttributeUnit}{\mathsf{FileAttributeUnit}}
+\newcommand{\hasFileAttribute}{\mathsf{hasFileAttribute}}
+\newcommand{\hasFileAttributeKind}{\mathsf{hasFileAttributeKind}}
+\newcommand{\hasFileAttributeValue}{\mathsf{hasFileAttributeValue}}
+\newcommand{\hasFileAttributeUnit}{\mathsf{hasFileAttributeUnit}}
+\newcommand{\hasFileAttributeValueString}{\mathsf{hasFileAttributeValueString}}
+\newcommand{\hasFileAttributeValueNumeric}{\mathsf{hasFileAttributeValueNumeric}}
+
+%% DocumentSet pattern
+\newcommand{\DocumentSet}{\mathsf{DocumentSet}}
+\newcommand{\DocumentType}{\mathsf{DocumentType}}
+\newcommand{\hasDocumentType}{\mathsf{hasDocumentType}}
+\newcommand{\isPublishedBy}{\mathsf{isPublishedBy}}
+
+%% Document pattern
+\newcommand{\Document}{\mathsf{Document}}
+\newcommand{\DocumentFile}{\mathsf{DocumentFile}}
+\newcommand{\hasDocumentFile}{\mathsf{hasDocumentFile}}
+\newcommand{\isDocumentDownloadableAt}{\mathsf{isDocumentDownloadableAt}}
+
+%% PhysicalSampleSet pattern
+\newcommand{\PhysicalSampleSet}{\mathsf{PhysicalSampleSet}}
+
+%% PhysicalSample pattern
+\newcommand{\PhysicalSample}{\mathsf{PhysicalSample}}
+\newcommand{\SamplingProcess}{\mathsf{SamplingProcess}}
+\newcommand{\Feature}{\mathsf{Feature}}
+\newcommand{\originatesFrom}{\mathsf{originatesFrom}}
+\newcommand{\derivedUsing}{\mathsf{derivedUsing}}
+\newcommand{\isInputFeatureOf}{\mathsf{isInputFeatureOf}}
+\newcommand{\ecglps}{\mathsf{ecglps}}
+\newcommand{\ecglio}{\mathsf{ecglio}}
+\newcommand{\ecglev}{\mathsf{ecglev}}
+\newcommand{\ecglpv}{\mathsf{ecglpv}}
+\newcommand{\hasName}{\mathsf{hasName}}
+
+%% Process pattern stub
+\newcommand{\Process}{\mathsf{Process}}
+\newcommand{\hasProcessOutput}{\mathsf{hasProcessOutput}}
+\newcommand{\hasProcessInput}{\mathsf{hasProcessInput}}
+\newcommand{\hasProcessOutputProducer}{\mathsf{hasProcessOutputProducer}}
+
+%% Instrument pattern
+\newcommand{\Instrument}{\mathsf{Instrument}}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 
