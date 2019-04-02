@@ -2,4 +2,4 @@
 *.aux
 *.bibl
 *.out
-*.syntex(busy)
+*.syntex*
