@@ -24,8 +24,6 @@ The pattern for an Aggregation, Bag, or Collection is relatively simple. The Bag
 % Domain and Range Restrictions
 \exists\textsf{itemOf.BagItem} &\sqsubseteq \textsf{Bag} \\
 \textsf{Bag} &\sqsubseteq \forall\textsf{itemOf.BagItem} \\
-\exists\textsf{hasSize} &\sqsubseteq \textsf{Bag} \\
-\top &\sqsubseteq \textsf{hasSize.xsd:positiveInteger}
 % Inverse Aliases (if any) 
 \end{align}
 
@@ -38,8 +36,6 @@ The pattern for an Aggregation, Bag, or Collection is relatively simple. The Bag
 \item Subproperty: \textsf{itemOf} is a subproperty to \textsf{po-member} from the Partonymy Pattern (Section \ref{sec:Partonymy}).
 \item Scoped Domain: the scoped domain of \textsf{itemOf}, scoped by \textsf{BagItem}, is \textsf{Bag}.
 \item Scoped Range: the scoped range of \textsf{itemOf}, scoped by \textsf{Bag}, is \textsf{BagItem}.
-\item Scoped Domain: the scoped domain of \textsf{hasSize}, scoped by \textsf{xsd:positiveInteger}, is \textsf{Bag}.
-\item Range: the range of \textsf{hasSize} is an \textsf{xsd:positiveInteger}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,7 +44,6 @@ The pattern for an Aggregation, Bag, or Collection is relatively simple. The Bag
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}[CQ1.]
 \item What bag is this item an element of?
-\item What is the size of this bag?
 \item What resource does this item refer to?
 \item What are the items contained in this bag?
 \end{enumerate}
