@@ -3,23 +3,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=.4\textwidth]{figures/aggregation}
+\includegraphics[width=.8\textwidth]{figures/aggregation}
 \end{center}
-\caption{Schema Diagram for Aggregation, Bag, Collection.}
+\caption{Schema Diagram for the Aggregation, Bag, Collection Pattern.}
 \label{fig:Aggregation,}
 \end{figure}
 \subsection{Summary}
 \label{sum:Aggregation,}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+The pattern for an Aggregation, Bag, or Collection is relatively simple. The Bag is a type of unordered collection. This pattern was included in this library for demonstrating a more approachable interface for the partonymy pattern, with respect to membership. For example, we may use this pattern to represent a committee. In this case, the committee member is the\textsf{BagItem}, the committee is the \textsf{Bag}, and the \textsf{itemOf} property is a sub-property to the \textsf{po-member} property found in the Partonymy/Meronymy pattern (Section \ref{sec:Partonymy}). This pattern was adapted from the Bag ontology design pattern and be found at \url{http://ontologydesignpatterns.org/wiki/Submissions:Bag}. Some language is borrowed from the description.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
 \label{axs:Aggregation,}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+% General Axioms
+\textsf{Bag} &\sqsubseteq \textsf{Collection} \\
+\textsf{itemOf} &\sqsubseteq \textsf{po-member} \\
+% Domain and Range Restrictions
+\exists\textsf{itemOf.BagItem} &\sqsubseteq \textsf{Bag} \\
+\textsf{Bag} &\sqsubseteq \forall\textsf{itemOf.BagItem} \\
+\exists\textsf{hasSize} &\sqsubseteq \textsf{Bag} \\
+\top &\sqsubseteq \textsf{hasSize.xsd:positiveInteger}
+% Inverse Aliases (if any) 
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,7 +34,12 @@ I am some summary text.
 \label{exp:Aggregation,}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-\item temporary item
+\item Subclass: a \textsf{Bag} is a \textsf{Collection}
+\item Subproperty: \textsf{itemOf} is a subproperty to \textsf{po-member} from the Partonymy Pattern (Section \ref{sec:Partonymy}).
+\item Scoped Domain: the scoped domain of \textsf{itemOf}, scoped by \textsf{BagItem}, is \textsf{Bag}.
+\item Scoped Range: the scoped range of \textsf{itemOf}, scoped by \textsf{Bag}, is \textsf{BagItem}.
+\item Scoped Domain: the scoped domain of \textsf{hasSize}, scoped by \textsf{xsd:positiveInteger}, is \textsf{Bag}.
+\item Range: the range of \textsf{hasSize} is an \textsf{xsd:positiveInteger}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +47,10 @@ I am some summary text.
 \label{cqs:Aggregation,}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}[CQ1.]
-\item temporary item
+\item What bag is this item an element of?
+\item What is the size of this bag?
+\item What resource does this item refer to?
+\item What are the items contained in this bag?
 \end{enumerate}
 
 \newpage
