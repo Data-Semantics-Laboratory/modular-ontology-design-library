@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=.4\textwidth]{figures/name}
+\includegraphics[width=.7\textwidth]{figures/name}
 \end{center}
 \caption{Schema Diagram for Name Stub.}
 \label{fig:Name}
@@ -11,15 +11,14 @@
 \subsection{Summary}
 \label{sum:Name}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+The \textsf{NameStub} Pattern is a specialization of the \textsf{Stub} Pattern found in Section \ref{sec:Stub}. It is included here for convenience as it is has been frequently encountered in our modelling experiences.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
 \label{axs:Name}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+\top &\sqsubseteq \forall \textsf{nameAsString.xsd:string} \\ 
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,7 +26,7 @@ I am some summary text.
 \label{exp:Name}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-\item temporary item
+\item Range: the range of \textsf{nameAsString} is \textsf{xsd:string}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +34,7 @@ I am some summary text.
 \label{cqs:Name}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}[CQ1.]
-\item temporary item
+\item What is the name of the lecturer?
 \end{enumerate}
 
 \newpage
