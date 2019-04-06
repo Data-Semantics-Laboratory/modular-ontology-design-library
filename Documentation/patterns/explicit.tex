@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=.4\textwidth]{figures/explicit}
+\includegraphics[width=.7\textwidth]{figures/explicit}
 \end{center}
 \caption{Schema Diagram for Explicit Typing.}
 \label{fig:Explicit}
@@ -11,15 +11,14 @@
 \subsection{Summary}
 \label{sum:Explicit}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+The pattern for explicit typing is very straightforward. Indeed, it is merely a representation of what we consider to be a "best practice." This pattern is used when there is a finite, but mutable number of types of a thing. We find this easier to maintain than a series of subclass relationships.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
 \label{axs:Explicit}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+\top &\sqsubseteq \forall\textsf{hasType.Type}  
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,7 +26,7 @@ I am some summary text.
 \label{exp:Explicit}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-\item temporary item
+\item Range: the range of \textsf{hasType} is \textsf{Type}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +34,8 @@ I am some summary text.
 \label{cqs:Explicit}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}[CQ1.]
-\item temporary item
+\item What is the type of Event?
+\item Which type of apparatus is that?
 \end{enumerate}
 
 \newpage
