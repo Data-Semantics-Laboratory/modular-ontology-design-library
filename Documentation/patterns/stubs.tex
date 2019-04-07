@@ -11,15 +11,14 @@
 \subsection{Summary}
 \label{sum:Stubs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+Stubs are a very minimal pattern that could also be described as a technique or best practice. Essentially, during modelling, there are frequently times when developers recognize that a concept is complex, but also out of the scope of an ontology or knowledge graph. However, the developer would like to keep the ontology extensible or allow others to build off of the ontology at that point. One example of this is Name or Title. In many cases, there is no reason to store more than a string for a name or title. However, names and titles are not necessarily inherent to a thing at all times. Yet, delving into those details may be unnecessary for a use-case. To account for this, a developer may want to use as stub. That is, acknowledge the complexity of a concept, but also include the information that is useful. This metapattern is described in more detail in \cite{stub}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
 \label{axs:Stubs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+\top &\sqsubseteq \textsf{hasValue.xsd:AnyValue}
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,7 +26,7 @@ I am some summary text.
 \label{exp:Stubs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-\item temporary item
+\item Range: the range of \textsf{hasValue} is any xsd datatype. We use AnyValue in the above axiom to indicate that any datatype will suffice.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
