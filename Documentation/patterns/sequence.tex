@@ -18,8 +18,17 @@ I am some summary text.
 \label{axs:Sequence,}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+\textsf{FirstItem} &\sqsubseteq \textsf{ListItem} \\
+\textsf{LastItem} &\sqsubseteq \textsf{ListItem} \\
+\textsf{ListItem} &\sqsubseteq \forall \textsf{hasNext.ListItem} \\
+\textsf{ListItem} &\sqsubseteq \forall \textsf{hasNext}^-\textsf{.ListItem} \\
+\textsf{ListItem} \sqcap \lnot \textsf{LastListItem} &\equiv \textsf{ListItem} \sqcap \mathord{=1} \textsf{hasNext.ListItem} \\
+\textsf{ListItem} \sqcap \lnot \textsf{FirstListItem} &\equiv \textsf{ListItem} \sqcap \mathord{=1} \textsf{hasNext}^- \textsf{.ListItem} \\
+\textsf{FirstListItem} &\equiv \textsf{ListItem} \sqcap \lnot \exists \textsf{hasNext}^-\textsf{.}\top \\
+\textsf{LastListItem} &\equiv \textsf{ListItem} \sqcap \lnot \exists \textsf{hasNext.}\top \\
+\textsf{hasNext} &\sqsubseteq \textsf{hasSuccessor} \\
+\textsf{hasNext} \circ \textsf{hasSuccessor} &\sqsubseteq \textsf{hasSuccessor} \\
+\text{Irreflexive}&(\textsf{hasSuccessor})
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,15 +36,17 @@ I am some summary text.
 \label{exp:Sequence,}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-\item temporary item
-\end{enumerate}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Competency Question}
-\label{cqs:Sequence,}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{enumerate}[CQ1.]
-\item temporary item
+\item Subclass: the \textsf{FirstItem} is a \textsf{ListItem}.
+\item Subclass: the \textsf{LastItem} is a \textsf{ListItem}.
+\item Scoped Range: the range of \textsf{hasNext}, scoped by \textsf{ListItem}, is \textsf{ListItem}.
+\item Scoped Range: the range of \textsf{hasNext}$^-$, scoped by \textsf{ListItem}, is \textsf{ListItem}.
+\item A \textsf{ListItem} that is not the \textsf{LastItem} has exactly one next \textsf{ListItem}.
+\item A \textsf{ListItem} that is not the \textsf{FirstItem} has exactly one previous \textsf{ListItem}.
+\item The \textsf{FirstItem} does not have have a predecessor.
+\item The \textsf{LastItem} does not have a next \textsf{ListItem}.
+\item Subproperty: \textsf{hasNext} is a subproperty to \textsf{hasSuccessor}.
+\item Role Chain: the successor of a \textsf{ListItem}'s next \textsf{ListItem} is its successor.
+\item Irreflexivity.
 \end{enumerate}
 
 \newpage
