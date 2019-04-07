@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=.4\textwidth]{figures/quantities}
+\includegraphics[width=.7\textwidth]{figures/quantities}
 \end{center}
 \caption{Schema Diagram for Quantities and Units.}
 \label{fig:Quantities}
@@ -11,15 +11,21 @@
 \subsection{Summary}
 \label{sum:Quantities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+This pattern is heavily adapted from QUDT\footnote{\url{http://www.qudt.org/release2/qudt-catalog.html}}. A \textsf{Quantity} 
+
+Reification?
+
+\textsf{QuantityKind} and \textsf{Unit} are controlled vocabularies, as recommended by QUDT \cite{qudt}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
 \label{axs:Quantities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+\top &\sqsubseteq \forall \textsf{hasQuantityKind.QuantityKind} \\
+\top &\sqsubseteq \forall \textsf{hasQuantityValue.QuantityValue} \\
+\top &\sqsubseteq \forall \textsf{hasUnit.Unit} \\
+\top &\sqsubseteq \forall \textsf{hasNumericaValue.xsd:double}
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,7 +33,10 @@ I am some summary text.
 \label{exp:Quantities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-\item temporary item
+\item Range: the range of \textsf{hasQuantityKind} is \textsf{QuantityKind}.
+\item Range: the range of \textsf{hasQuantityValue} is \textsf{QuantityValue}.
+\item Range: the range of \textsf{hasUnit} is \textsf{Unit}.
+\item Range: the range of \textsf{hasNumericValue} is \textsf{xsd:double}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +44,8 @@ I am some summary text.
 \label{cqs:Quantities}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}[CQ1.]
-\item temporary item
+\item How much does an elephant weigh in kilograms?
+\item How long is Jupiter from the Sun, at its farthest, in furlongs?
 \end{enumerate}
 
 \newpage
