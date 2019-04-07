@@ -29,8 +29,8 @@ The \textsf{AgentRole} pattern is essentially a reification of association with 
 % \exists\textsf{providesAgentRole.}\top &\sqsubseteq \textsf{AgentRole}\\
 \top &\sqsubseteq \forall\textsf{providesRole.AgentRole} \\
 % Inverses
-\textsf{performsAgentRole} &\equiv \textsf{isPerformedBy}^- \\
-\textsf{providedBy} &\equiv \textsf{providesAgentRole}^-
+\textsf{isPerformedBy} &\equiv \textsf{performsAgentRole}^- \\
+\textsf{isProvidedBy} &\equiv \textsf{providesAgentRole}^-
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,7 +44,6 @@ The \textsf{AgentRole} pattern is essentially a reification of association with 
 \item Scoped Range: the scoped range of \textsf{isPerformedBy}, scoped by \textsf{AgentRole}, is \textsf{Agent}. 
 \item Scoped Domain: the scoped domain of \textsf{hasTemporalExtent}, scoped by \textsf{TemporalExtent}, is \textsf{AgentRole}.
 \item Range: the range of \textsf{hasTemporalExtent} is \textsf{TemporalExtent}.
-%\item Domain: the domain of \textsf{providesAgentRole}, scoped by 
 \item Range:  the range of \textsf{providesAgentRole} is \textsf{AgentRole}.
 \item Inverse Alias.
 \item Inverse Alias.
