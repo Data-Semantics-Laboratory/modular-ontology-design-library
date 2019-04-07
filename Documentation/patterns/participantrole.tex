@@ -3,23 +3,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=.4\textwidth]{figures/participantrole}
+\includegraphics[width=.8\textwidth]{figures/participantrole}
 \end{center}
-\caption{Schema Diagram for ParticipantRole.}
+\caption{Schema Diagram for the ParticipantRole Pattern. The visual notation is explained in Chapter \ref{chap:prelims}.}
 \label{fig:ParticipantRole}
 \end{figure}
 \subsection{Summary}
 \label{sum:ParticipantRole}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+The \textsf{ParticipantRole} Pattern is a specialization of the \textsf{AgentRole} Pattern, which can be found in Section \ref{sec:AgentRole}; many axioms are inherited due to this. We include it for convenience as it occurs frequently in our modelling experiences. This pattern has additional synergies with the \textsf{Event} Pattern \cite{event,enslave}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
 \label{axs:ParticipantRole}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+\textsf{ParticipantRole} &\sqsubseteq \textsf{AgentRole} \\
+\textsf{providesParticipantRole} &\sqsubseteq \textsf{providesAgentRole} \\
+\top &\sqsubseteq \forall \textsf{providesParticipantRole.ParticipantRole} 
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,7 +28,9 @@ I am some summary text.
 \label{exp:ParticipantRole}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-\item temporary item
+\item Subclass: every \textsf{ParticipantRole} is an \textsf{AgentRole}.
+\item Subproperty: \textsf{providesParticipantRole} is a subproperty of \textsf{providesAgentRole}.
+\item Range: the range of \textsf{providesParticipantRole} is \textsf{ParticipantRole}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +38,9 @@ I am some summary text.
 \label{cqs:ParticipantRole}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}[CQ1.]
-\item temporary item
+\item Who were the participants in this event?
+\item Which students attended the lecture?
+\item Who were the passengers on the cruise?
 \end{enumerate}
 
 \newpage
