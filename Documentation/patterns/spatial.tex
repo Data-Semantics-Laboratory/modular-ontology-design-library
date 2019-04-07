@@ -3,23 +3,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=.4\textwidth]{figures/spatial}
+\includegraphics[width=.8\textwidth]{figures/spatial}
 \end{center}
-\caption{Schema Diagram for Spatial Extent.}
+\caption{Schema Diagram for Spatial Extent. The visual notation is explained in Chapter \ref{chap:prelims}.}
 \label{fig:Spatial}
 \end{figure}
 \subsection{Summary}
 \label{sum:Spatial}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+The Spatial Extent pattern is characterized by a set of \textsf{Interiors}, which are in turn characterized by a \textsf{PointInSpace-Sequence}. A \textsf{PointInSpace-Sequence} consists of \textsf{PointInSpace-SequenceElements}, which are constituted by \textsf{PointInSpace}. A \textsf{PointInSpace} is described by a value and a reference system. \textsf{PIS-Sequence} is a specialization of the \textsf{Sequence} Pattern (Section \ref{sec:Sequence}). We also further choose to use the Explicit Typing Pattern for \textsf{PointInSpace} and \textsf{ReferenceSystem}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
 \label{axs:Spatial}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+\textsf{Interior} &\sqsubseteq \forall \textsf{isDefinedBy.PIS-Sequence} \\
+\textsf{PIS-Sequence} &\sqsubseteq \forall \textsf{hasFirst.PIS-SequenceElement} \\
+\textsf{PIS-Sequence} &\sqsubseteq \forall \textsf{hasLast.PIS-SequenceElement} \\
+\textsf{PIS-SequenceElement} &\sqsubseteq \forall \textsf{hasNext.PIS-SequenceElement} \\
+\textsf{PIS-SequenceElement} &\sqsubseteq \mathord{=}1 \textsf{constitutedBy.PointInSpace} \\
+\textsf{PointInSpace} &\sqsubseteq \forall \textsf{hasReferenceSystem.ReferenceSystem} \\
+\textsf{PointInSpace} &\sqsubseteq \forall \textsf{hasValue.Value}
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,6 +34,17 @@ I am some summary text.
 \begin{enumerate}
 \item temporary item
 \end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Remarks}
+\label{rem:Spatial}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We would also like the pattern to be able to express that a \textsf{SpatialExtent} consists of exactly some \textsf{Interiors} and no others. This is done by equipping the pattern with an axiom that must be tailored to the use-case and two rules.
+
+\begin{equation}
+\textsf{TemporalExtent} \sqsubseteq \mathord{=}n\textsf{contains.}\top
+\end{equation}
+where $n$ is the number of expected \textsf{Interiors}. The two rules are as follows.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Competency Question}

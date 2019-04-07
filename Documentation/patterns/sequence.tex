@@ -1,17 +1,18 @@
 \section{Sequence, List}
-\label{sec:Sequence,}
+\label{sec:Sequence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=.8\textwidth]{figures/sequence}
 \end{center}
-\caption{Schema Diagram for Sequence, List.}
+\caption{Schema Diagram for the Sequence and List Pattern. The visual notation is explained in Chapter \ref{chap:prelims}.}
+\label{fig:Spatiotemporal}
 \label{fig:Sequence,}
 \end{figure}
 \subsection{Summary}
-\label{sum:Sequence,}
+\label{sum:Sequence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+I am some summary text. \cite{tree}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
@@ -22,10 +23,10 @@ I am some summary text.
 \textsf{LastItem} &\sqsubseteq \textsf{ListItem} \\
 \textsf{ListItem} &\sqsubseteq \forall \textsf{hasNext.ListItem} \\
 \textsf{ListItem} &\sqsubseteq \forall \textsf{hasNext}^-\textsf{.ListItem} \\
-\textsf{ListItem} \sqcap \lnot \textsf{LastListItem} &\equiv \textsf{ListItem} \sqcap \mathord{=1} \textsf{hasNext.ListItem} \\
-\textsf{ListItem} \sqcap \lnot \textsf{FirstListItem} &\equiv \textsf{ListItem} \sqcap \mathord{=1} \textsf{hasNext}^- \textsf{.ListItem} \\
-\textsf{FirstListItem} &\equiv \textsf{ListItem} \sqcap \lnot \exists \textsf{hasNext}^-\textsf{.}\top \\
-\textsf{LastListItem} &\equiv \textsf{ListItem} \sqcap \lnot \exists \textsf{hasNext.}\top \\
+\textsf{ListItem} \sqcap \lnot \textsf{LastItem} &\equiv \textsf{ListItem} \sqcap \mathord{=1}\textsf{hasNext.ListItem} \\
+\textsf{ListItem} \sqcap \lnot \textsf{FirstItem} &\equiv \textsf{ListItem} \sqcap \mathord{=1}\textsf{hasNext}^- \textsf{.ListItem} \\
+\textsf{FirstItem} &\equiv \textsf{ListItem} \sqcap \lnot \exists \textsf{hasNext}^-\textsf{.}\top \\
+\textsf{LastItem} &\equiv \textsf{ListItem} \sqcap \lnot \exists \textsf{hasNext.}\top \\
 \textsf{hasNext} &\sqsubseteq \textsf{hasSuccessor} \\
 \textsf{hasNext} \circ \textsf{hasSuccessor} &\sqsubseteq \textsf{hasSuccessor} \\
 \text{Irreflexive}&(\textsf{hasSuccessor})
@@ -33,7 +34,7 @@ I am some summary text.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Explanations}
-\label{exp:Sequence,}
+\label{exp:Sequence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
 \item Subclass: the \textsf{FirstItem} is a \textsf{ListItem}.

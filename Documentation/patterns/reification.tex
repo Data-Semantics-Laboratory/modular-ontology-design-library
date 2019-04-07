@@ -3,15 +3,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=.4\textwidth]{figures/reification}
+\includegraphics[width=.7\textwidth]{figures/reification}
 \end{center}
-\caption{Schema Diagram for Property Reification.}
+\caption{Schema Diagram for Property Reification. The visual notation is explained in Chapter \ref{chap:prelims}. Additioanlly, we use the dotted line with solid arrow to indicate which property is being reified. This relation has no bearing on the below axioms.}
 \label{fig:Property}
 \end{figure}
 \subsection{Summary}
 \label{sum:Property}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+The \textsf{AgentRole} pattern is essentially a reification of association with something. That is, it's very unlikely that an Agent will be associated with something for all time. Thus, the association relation is not binary, perhaps $\textit{associated}(x,y,t)$, agent $x$ is associated with thing $y$ at time $t$. Thus, the reification. The association becomes a concept in its own right and has a temporal extent, allowing an \textsf{Agent} to be associated to a \textsf{Thing} (e.g. \textsf{Event}, Section \ref{sec:Event}) for some \textsf{TemporalExtent}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}

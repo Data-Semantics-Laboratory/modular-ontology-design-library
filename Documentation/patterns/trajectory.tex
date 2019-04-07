@@ -5,7 +5,8 @@
 \begin{center}
 \includegraphics[width=.8\textwidth]{figures/trajectory}
 \end{center}
-\caption{Schema Diagram for Trajectory.}
+\caption{Schema Diagram for the Trajectory Pattern. The visual notation is explained in Chapter \ref{chap:prelims}.}
+\label{fig:Spatiotemporal}
 \label{fig:Trajectory}
 \end{figure}
 \subsection{Summary}
@@ -33,8 +34,8 @@ I am some summary text.
 \textsf{hasSegment} \circ \textsf{endsAt} &\sqsubseteq \textsf{hasFix} \\
 \exists \textsf{hasSegment.Segment} &\sqsubseteq \textsf{Trajectory} \\
 \exists \textsf{hasSegment}^-\textsf{.Trajectory} &\sqsubseteq \textsf{Segment} \\
-\exists \textsf{hasFix.Segment} \sqsubseteq &\sqsubseteq \textsf{Trajectory} \\
-\exists \textsf{hasFix}^-\textsf{Trajectory} &\sqsubseteq \textsf{Fix}
+\exists \textsf{hasFix.Segment} &\sqsubseteq \textsf{Trajectory} \\
+\exists \textsf{hasFix}^-\textsf{.Trajectory} &\sqsubseteq \textsf{Fix}
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,7 +46,7 @@ I am some summary text.
 \item \textsf{Segment} \textsf{startFrom} exactly one \textsf{Fix}.
 \item \textsf{Segment} \textsf{endsAt} exactly one \textsf{Fix}.
 \item Existential: A \textsf{Segment} belongs to at least one \textsf{Trajectory}.
-\item
+\item Role Chain: the concatenation of \textsf{startsFrom}$^-$ nad \textsf{endsAt} is \textsf{hasNext}.
 \item Subproperty: \textsf{hasNext} is a subproperty to \textsf{hasSuccessor}.
 \item Role Chain: \textsf{hasSuccessor} is transitive.
 \item Inverse Alias.
@@ -53,8 +54,8 @@ I am some summary text.
 \item A \textsf{Fix} that is not where a segment ends is a \textsf{StartingFix}.
 \item A \textsf{Fix} that is not where a segment starts is a \textsf{EndingFix}.
 \item Existential: a \textsf{Trajectory} has at least one \textsf{Segment}.
-\item Role Chain: 
-\item Role Chain:
+\item Role Chain: the concatenation of \textsf{hasSegment} and \textsf{startsFrom} is \textsf{hasFix}.
+\item Role Chain: the concatenation of \textsf{hasSegment} and \textsf{endsAt} is \textsf{hasFix}.
 \item Scoped Domain: the domain of \textsf{hasSegment}, scoped by \textsf{Segment}, is \textsf{Trajectory}.
 \item Scoped Domain: the domain of \textsf{hasSegment}$^-$, scoped by \textsf{Trajectory}, is \textsf{Segment}.
 \item Scoped Domain: the domain of \textsf{hasFix}, scoped by \textsf{Segment}, is \textsf{Trajectory}.

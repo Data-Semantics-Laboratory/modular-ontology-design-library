@@ -26,8 +26,7 @@ The \textsf{AgentRole} pattern is essentially a reification of association with 
 \textsf{AgentRole} &\sqsubseteq \forall\textsf{isPerformedBy.Agent} \\
 \exists\textsf{hasTemporalExtent.TemporalExtent} &\sqsubseteq \textsf{AgentRole} \\
 \top &\sqsubseteq \forall\textsf{hasTemporalExtent.TemporalExtent} \\
-% \exists\textsf{providesAgentRole.}\top &\sqsubseteq \textsf{AgentRole}\\
-\top &\sqsubseteq \forall\textsf{providesRole.AgentRole} \\
+\top &\sqsubseteq \forall\textsf{providesAgentRole.AgentRole} \\
 % Inverses
 \textsf{isPerformedBy} &\equiv \textsf{performsAgentRole}^- \\
 \textsf{isProvidedBy} &\equiv \textsf{providesAgentRole}^-

@@ -23,7 +23,6 @@ This pattern is used for associating some sort of identifier and metadata with a
 \top &\sqsubseteq \forall \textsf{hasIdentifier.Identifier} \\
 \exists \textsf{hasIdentifierType.}\top &\sqsubseteq \textsf{Identifier} \\
 \top &\sqsubseteq \forall \textsf{hasIdentifierType.IDType} \\
-\exists \textsf{identifierAsText.}\top &\sqsubseteq \textsf{Identifier} \\
 \top &\sqsubseteq \forall \textsf{identifierAsText.xsd:string}
 % Inverse Aliases (if any)
 \end{align}
@@ -36,7 +35,6 @@ This pattern is used for associating some sort of identifier and metadata with a
 \item Range: the range of \textsf{hasIdentifier} is \textsf{Identifier}.
 \item Domain: the domain of \textsf{hasIdentifierType} is \textsf{Identifier}.
 \item Range: the range of \textsf{hasIdentifierType} is \textsf{IDType}.
-\item Domain: the domain of \textsf{identifierAsText} is \textsf{Identifier}.
 \item Range: the range of \textsf{identifierAsText} is \textsf{xsd:string}.
 \end{enumerate}
 

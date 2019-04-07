@@ -20,7 +20,18 @@ The \textsf{ParticipantRole} Pattern is a specialization of the \textsf{AgentRol
 \begin{align}
 \textsf{ParticipantRole} &\sqsubseteq \textsf{AgentRole} \\
 \textsf{providesParticipantRole} &\sqsubseteq \textsf{providesAgentRole} \\
-\top &\sqsubseteq \forall \textsf{providesParticipantRole.ParticipantRole} 
+\top &\sqsubseteq \forall \textsf{providesParticipantRole.ParticipantRole} \\
+\textsf{AgentRole} &\sqsubseteq \text{=1}\textsf{isPerformedBy.Agent} \\
+\textsf{AgentRole} &\sqsubseteq \text{=1}\textsf{hasTemporalExtent.TemporalExtent} \\
+% Domain and Range Restrictions
+\exists\textsf{isPerformedBy.Agent} &\sqsubseteq \textsf{AgentRole} \\
+\textsf{AgentRole} &\sqsubseteq \forall\textsf{isPerformedBy.Agent} \\
+\exists\textsf{hasTemporalExtent.TemporalExtent} &\sqsubseteq \textsf{AgentRole} \\
+\top &\sqsubseteq \forall\textsf{hasTemporalExtent.TemporalExtent} \\
+\top &\sqsubseteq \forall\textsf{providesAgentRole.AgentRole} \\
+% Inverses
+\textsf{isPerformedBy} &\equiv \textsf{performsAgentRole}^- \\
+\textsf{isProvidedBy} &\equiv \textsf{providesAgentRole}^-
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -31,6 +42,15 @@ The \textsf{ParticipantRole} Pattern is a specialization of the \textsf{AgentRol
 \item Subclass: every \textsf{ParticipantRole} is an \textsf{AgentRole}.
 \item Subproperty: \textsf{providesParticipantRole} is a subproperty of \textsf{providesAgentRole}.
 \item Range: the range of \textsf{providesParticipantRole} is \textsf{ParticipantRole}.
+\item Exactly one \textsf{Agent} performs an \textsf{AgentRole}.
+\item An \textsf{AgentRole} has exactly one \textsf{TemporalExtent}.
+\item Scoped Domain: the scoped domain of \textsf{isPerformedBy}, scoped by \textsf{Agent}, is \textsf{AgentRole}.
+\item Scoped Range: the scoped range of \textsf{isPerformedBy}, scoped by \textsf{AgentRole}, is \textsf{Agent}. 
+\item Scoped Domain: the scoped domain of \textsf{hasTemporalExtent}, scoped by \textsf{TemporalExtent}, is \textsf{AgentRole}.
+\item Range: the range of \textsf{hasTemporalExtent} is \textsf{TemporalExtent}.
+\item Range:  the range of \textsf{providesAgentRole} is \textsf{AgentRole}.
+\item Inverse Alias.
+\item Inverse Alias.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
