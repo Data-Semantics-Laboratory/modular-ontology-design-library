@@ -12,7 +12,7 @@
 \subsection{Summary}
 \label{sum:Sequence}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text. \cite{tree}
+The \textsf{Sequence} Pattern is a way of imposing order upon items of interest; it follows the conceptualization of a Linked List from computer science. This pattern is a simplified view of the \textsf{Tree} Pattern (as found in Section \ref{sec:Tree}) and is adapted from \cite{tree}. While this pattern seems very abstract, it is both easy to specialize and occurs very frequently. In this resource, the pattern occurs in the \textsf{Trajectory} Pattern (a sequence of Fixes), the \textsf{SpatiotemporalExtent} Pattern (a sequence of \textsf{Place}, \textsf{Time} pairs), and \textsf{SpatialExtent} (a sequence of \textsf{PointsInSpace}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
@@ -48,6 +48,16 @@ I am some summary text. \cite{tree}
 \item Subproperty: \textsf{hasNext} is a subproperty to \textsf{hasSuccessor}.
 \item Role Chain: the successor of a \textsf{ListItem}'s next \textsf{ListItem} is its successor.
 \item Irreflexivity.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Competency Questions}
+\label{cqs:Sequence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}[CQ1.]
+\item What is the first element of the list?
+\item What is the last element of the list?
+\item Is $x$ a predecessor of $y$?
 \end{enumerate}
 
 \newpage

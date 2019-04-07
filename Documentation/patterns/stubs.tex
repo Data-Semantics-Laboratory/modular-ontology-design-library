@@ -18,7 +18,8 @@ Stubs are a very minimal pattern that could also be described as a technique or 
 \label{axs:Stubs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \textsf{hasValue.xsd:AnyValue}
+\top &\sqsubseteq \forall \textsf{hasValue.xsd:AnyValue} //
+\textsf{Stub} &\sqsubseteq \exists \textsf{hasValue.xsd:AnyValue}
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,6 +28,7 @@ Stubs are a very minimal pattern that could also be described as a technique or 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
 \item Range: the range of \textsf{hasValue} is any xsd datatype. We use AnyValue in the above axiom to indicate that any datatype will suffice.
+\item Existential: the \textsf{Stub} must have a value.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
