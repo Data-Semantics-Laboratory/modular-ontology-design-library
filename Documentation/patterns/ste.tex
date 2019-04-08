@@ -11,11 +11,7 @@
 \subsection{Summary}
 \label{sum:Spatiotemporal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This pattern is adapted from \cite{ste}.
-
-The rest of the axioms can be found in Section \ref{sec:Trajectory}.
-
-notice fix now has dimensions to it.
+The \textsf{SpatiotemporalExtent} pattern wraps the \textsf{Trajectory} Pattern (Section \ref{sec:Trajectory}). Essentially, it uses the \textsf{Trajectory} Pattern's ability to capture discrete snapshots of something moving along some dimension, but casts it into the familiar three physical dimensions, plus time. This is done by adding the \textsf{atPlace} and \textsf{atTime} properties that hang off of \textsf{Fix}. This pattern is more fully described in \cite{ste}. The \textsf{SpatiotemporalExtent} is primarily used when it is difficult to separate space and time when talking about a concept.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
