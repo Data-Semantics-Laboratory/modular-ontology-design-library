@@ -12,7 +12,7 @@
 \subsection{Summary}
 \label{sum:Trajectory}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+The \textsf{Trajectory} Pattern allows a developer to track something moving through some space. This is, of course, very abstract and is intended to be a starting point for capturing any movement that occurs at discrete points in a space. Intuitively, there is the notion of moving through time and space and those captured discrete points in space may be GPS position recordings. This sort of data may be best captured with the \textsf{SpatiotemporalExtent} Pattern (Section \ref{sec:ste}), which extends the \textsf{Trajectory} Pattern. This pattern may be also used as a starting point for modelling procedures (i.e. steps are discrete points in procedure space) or chemical reactions (we can really only be sure of what our sensors tell us, and they only tell us things at their polling rates). This pattern is an abstraction of the Semantic Trajectory pattern found in \cite{traj}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
@@ -67,7 +67,8 @@ I am some summary text.
 \label{cqs:Trajectory}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}[CQ1.]
-\item temporary item
+\item What is the first step of the procedure?
+\item What was the cruise's final stop?
 \end{enumerate}
 
 \newpage
