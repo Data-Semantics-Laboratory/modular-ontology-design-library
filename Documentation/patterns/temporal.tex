@@ -18,8 +18,13 @@ I am some summary text.
 \label{axs:Temporal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+\textsf{TemporalExtent} &\sqsubset \mathord{=}n \textsf{contains.ComplexTemporalExtent} \\
+\textsf{TimeInterval} &\sqsubset \textsf{ComplexTemporalExtent} \\
+\textsf{TimeInterval} &\sqsubset \mathord{=}1 \textsf{startsFrom.PointInTime} \\
+\textsf{TimeInterval} &\sqsubset \mathord{=}1 \textsf{endsAt.PointInTime} \\
+\textsf{PointInTime} &\sqsubset \textsf{ComplexTemporalExtent} \\
+\textsf{PointInTime} &\sqsubset \mathord{=}1 \textsf{hasReferenceSystem.ReferenceSystem} \\
+\textsf{PointInTime} &\sqsubset \mathord{=}1 \textsf{hasValue.Value}
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -27,7 +32,13 @@ I am some summary text.
 \label{exp:Temporal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}
-\item temporary item
+\item Numerical Restriction: a \textsf{TemporalExtent} \textsf{contains} exactly $n$ \textsf{ComplexTemporalExtents}. See below remarks.
+\item Subclass: every \textsf{TimeInterval} is a \textsf{ComplexTemporalExtent}.
+\item Numerical Restriction: a \textsf{TimeInterval} \textsf{startsAt} exactly 1 \textsf{PointInTime}.
+\item Numerical Restriction: a \textsf{TimeInterval} \textsf{endsAt} exactly 1 \textsf{PointInTime}.
+\item Subclass: every \textsf{PointInTime} is a \textsf{ComplexTemporalExtent}.
+\item Numerical Restriction: a \textsf{PointInTime} has exactly 1 \textsf{ReferenceSystem}.
+\item Numerical Restriction: a \textsf{PointInTime} has exactly 1 \textsf{Value}.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +46,8 @@ I am some summary text.
 \label{cqs:Temporal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}[CQ1.]
-\item temporary item
+\item How long was World War II?
+\item What era was the ice age?
 \end{enumerate}
 
 \newpage
