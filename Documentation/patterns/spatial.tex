@@ -50,7 +50,7 @@ The \textsf{SpatialExtent} pattern is characterized by a set of \textsf{Interior
 We would also like the pattern to be able to express that a \textsf{SpatialExtent} consists of exactly some \textsf{Interiors} and no others. This is done by equipping the pattern with an axiom that must be tailored to the use-case and two rules for generating a set of assertions.
 
 \begin{equation}
-\textsf{TemporalExtent} \sqsubseteq \mathord{=}n\textsf{contains.Interior}
+\textsf{SpatialExtent} \sqsubseteq \mathord{=}n\textsf{contains.Interior}
 \end{equation}
 where $n$ is the number of expected \textsf{Interiors}. Next,
 $$\textit{contains}(\textsf{spatialExtent, interior}_k) \text{ for } k=1,...,n$$

@@ -11,7 +11,7 @@
 \subsection{Summary}
 \label{sum:Temporal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-I am some summary text.
+A \textsf{TemporalExtent} is composed of a number of \textsf{ComplexTimeIntervals}, which may be intervals of non-zero length (i.e. \textsf{TimeIntervals}) or intervals of length 0 (i.e. \textsf{PointsInSpace}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Axiomatization}
@@ -42,11 +42,26 @@ I am some summary text.
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Remarks}
+\label{rem:Temporal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We would also like the pattern to be able to express that a \textsf{TemporalExtent} consists of exactly some \textsf{TimeIntervals} or \textsf{PointsInTime} and no other things. This is done by equipping the pattern with an axiom that must be tailored to the use-case and two rules for generating a set of assertions.
+
+\begin{equation}
+\textsf{TemporalExtent} \sqsubseteq \mathord{=}n\textsf{contains.Interior}
+\end{equation}
+where $n$ is the number of expected \textsf{ComplextimeIntverals}. Next,
+$$\textit{contains}(\textsf{temporalExtent, complexTimeInterval}_k) \text{ for } k=1,...,n$$
+and
+$$\textsf{complexTimeInterval}_i \not = \textsf{complexTimeInterval}_j \text{ for } i \not = j$$
+This allows us to express a \textsf{TemporalExtent} as a set of \textsf{ComplexTimeIntervals}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Competency Question}
 \label{cqs:Temporal}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{enumerate}[CQ1.]
-\item How long was World War II?
+\item Which dates did World War II span?
 \item What era was the ice age?
 \end{enumerate}
 
