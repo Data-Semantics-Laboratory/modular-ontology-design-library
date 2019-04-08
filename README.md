@@ -10,6 +10,8 @@
 	4. Explanations
 	5. Competency Questions 
 
+Note: When tracking the provenance of the changes, there was an accidental blanket commit that can't be reverted. Sorry for the confusion during the intial commit period.
+
 ## MODL
 Here be OWLs.
 
