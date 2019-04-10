@@ -1,33 +1,70 @@
 \chapter{Introduction}
 
-\section{Motivation}
-Ontology Reuse
-Despite promises to the contrary, ontologies are infrequently re-used. This results in a massive duplication of effort for any ontology.
+\section*{Motivation}
+The Information Age is an apt description for these modern times; between the World Wide Web and the Internet of Things an unfathomable amount of information is accessible to humans and machines, but the sheer volume and heterogeneity of the data have their drawbacks. Humans have difficulty drawing \emph{meaning} from large amounts of data. Machines can parse the data, but do not \emph{understand} it. Thus, in order to bridge this gap, data would need to be organized in such a way that some critical part of the human conceptualization is preserved. Ontologies are a natural fit for this role, as they may act as a vehicle for the sharing of \emph{understanding} \cite{gruber}.
 
-Ontologies are everywhere and are spreading! For example, they are seeing widespread use in the digital humanities and increasingly across different sciences. Or under different names, such as knowledge graph schemas.
+Unfortunately, published ontologies have infrequently lived up to such a promise, hence the recent emphasis on FAIR (Findable, Accessible, Interoperable, and Reusable) data practices \cite{fair}. More specifically, many ontologies are not interoperable or reusable. This is usually due to incompatible ontological commitments: strong---or very weak---ontological committments lead to an ontology that is really only useful for a specific use-case, or to an ambiguous model that is almost meaningless by itself.
 
-In the recent dagstuhl seminar on knowledge graphs, one of the grand challenges of the community was to define, demonstrate, and make available a methodology that emphasises FAIR data practices. Of particular note to this proposal are I- for interoperable and R for reusable. 
+To combat this, we have developed a methodology for developing so-called modular ontologies \cite{chess}. In particular, we are especially interested in pattern-based modules \cite{momtut}. A modularized ontology is an ontology that individual users can easily adapt to their own use-cases, while still preserving relations with other versions of the ontology; that is, keeping it \emph{interoperable} with other ontologies. Such ontologies may be so adapted due to their ``plug-and-play'' nature; that is, one module may be swapped out for another developed from the same pattern.
 
-And of course, saving time during the ontology engineering phase would be welcome.
+An ontology design pattern is, essentially, a small self-contained ontology that addresses a general problem that has been observed to be invariant over different domains or applications \cite{odpbook}. By tailoring a pattern to a more specific use-case, an ontology engineer has developed a \emph{module}. This modelling paradigm moves much of the cost away from the formalization of a conceptualization (i.e. the logical axiomatization). Instead, pattern-based modular ontolody design (PBMOD) is predicated upon knowledge of available patterns, as well as being aware of the use-cases it addresses and its ontological commitments. 
 
-In order to address our problem, we want to come up with a methodology for creating ontologies that are easy to reuse. 
+Thus, in order to address the findability and accessibility aspects of PBMOD, we have developed MODL: a modular ontology design library, which is herein described.
 
-How to develop an ontology engineering methodology and its tools to make it easier for ontology engineers to re-use ontological artifacts?
+\section*{Overview}
+MODL is a curated collection of well-documented ontology design patterns. Some of the patterns are novel, but many more have been extracted from existing ontologies and streamlined for use in a general manner. MODL, as an artefact, is distributed online as a collection of annotated OWL files and this technical report.
 
-Hypothesis: Modular ontology engineering with Ontology Design Patterns (ODP) makes reusing ontological artifacts easier.
+There are two different ways to use MODL---for use in ontology modelling and for use in tools. In both cases, MODL is distributed as a ZIP archive of the patterns' OWL files and accompanying documentation. In the case of the Ontology Engineer, it is simply used as a resource while building an ontology, perhaps by using Modular Ontology Modelling or eXtreme Design methodologies. For the tool developer, we also supply an ontology consisting of exactly the OPLa annotations from each pattern that pertain to \textsf{OntologicalCollection}. As OPLa is fully specified in OWL, these annotations make up an ontology of patterns and their relations. One particular use-case that we foresee is a tool developer querying the ontology for which patterns are related to the current pattern, or looking for a pattern based on keywords or similarity to competency questions.
 
-More concretely, we posit that a modular ontology engineering paradigm and methodology based on the reuse and propagation of Ontology Design Patterns will in fact, make re-using ontological artifacts easier.
+\section*{Organization}
+\subsection*{Namespaces}
+For MODL we currently use the namespace \url{https://archive.org/services/purl/purl/modular_ontology_design_library/<VERSION>/<PATTERN>}. 
 
---- 
-explain what odps are, consider talking about why using odps is a good idea, and maybe an example.
+\subsection*{Current Patterns}
 
-\section{Overview}
-What is CORe, specifically.
-How we intend CORe to be used.
+\begin{enumerate}
+\item Metapatterns
+\begin{enumerate}
+\item Explicit Typing
+\item Property Reification
+\item Stubs
+\end{enumerate}
+\item Organization of Data
+\begin{enumerate}
+\item Aggregation, Bag, Collection
+\item Sequence, List
+\item Tree
+\end{enumerate}
+\item Space, Time, and Movement
+\begin{enumerate}
+\item Spatiotemporal Extent
+\item Spatial Extent
+\item Temporal Extent
+\item Trajectory
+\item Event
+\end{enumerate} 
+\item Agents and Roles
+\begin{enumerate}
+\item AgentRole
+\item ParticipantRole
+\item Name Stub
+\end{enumerate}
+\item Description and Details
+\begin{enumerate}
+\item Quantities and Units
+\item Partonymy/Meronymy
+\item Provenance
+\item Identifier
+\end{enumerate}
+\end{enumerate}
 
-\section{Organization}
-namespaces
+\subsection*{Categories}
+\noindent\textbf{Metapatterns} This category contains patterns that can be considered to be ``patterns for patterns.'' In other literature, notably \cite{odp1}, they may be called \emph{structural ontology design patterns}, as they are independent of any specific context, i.e. they are content-independent. This is particularly true for the metapattern for property reification, which, while a modelling strategy, is also a workaround for the lack of $n$-ary relationships in OWL. The other metapatterns address structural design choices frequently encountered when working with domain experts. They present a best practice to non-ontologists for addressing language specific limitations.
 
-categories
+\noindent\textbf{Organization of Data} This category contains patterns that pertain to how data might be organized. These patterns are necessarily highly abstract, as they are ontological reflections of common data structures in computer science. The pattern for aggregation, bag, or collection is a simple model for connecting many concepts to a single concept. Analogously, for the list and tree pattterns, which aim to capture ordinality and acyclicity, as well. More so than other patterns in this library, these patterns provide an axiomatization as a high-level framework that must be specialized (or modularized) to be truly useful.
 
-documentation
+\noindent\textbf{Space, Time, and Movement} This category contains patterns that model the movement of a thing through a space or spaces and a general event pattern. The semantic trajectory pattern is a more general pattern for modelling the discrete movements along some dimensions. The spatiotemporal extent pattern is a trajectory along the familiar dimensions of time and space. Both patterns are included for convenience.
+
+\noindent\textbf{Agents and Roles} This category contains patterns that pertain to agents interacting with things. Here, we consider an agent to be anything that performs some action or role. This is important, as it decouples the role of an agent from the agent itself. For example, a \textsf{Person} may be \textsf{Husband} and \textsf{Widower} at some point, but should not be both simultaneously. These patterns enable the capture of this data. In fact, the agent role and participante role patterns are convenient specializations of property reification that have evolved into a modelling practice writ large. In this category, we also include the name stub, which is a convenient instantiation of the stub metapattern; it allows us to acknowledge that a name is a complicated thing, but sometimes we only really need the string representation.
+
+\noindent\textbf{Description and Details} This category contains patterns that model the description of things. These patterns are relatively straightforward, models for capturing ``how much?'' and ``what kind?'' for a particular thing; patterns that are derived from Winston's part-whole taxonomy \cite{partof}; a pattern extracted from PROV-O \cite{provo}, perhaps to be used to answer ``where did this data come from?''; and a pattern for associating an identifier with something.
