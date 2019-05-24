@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://archive.org/services/purl/purl/modular_ontology_design_library"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://archive.org/services/purl/purl/modular_ontology_design_library"
+     versionIRI="https://archive.org/services/purl/purl/modular_ontology_design_library/1.0.0">
+    <Prefix name="" IRI="https://archive.org/services/purl/purl/modular_ontology_design_library"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Category"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pattern"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRelatedPattern"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#specializationOfPattern"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AgentRole"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AgentsAndRoles"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bag"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DescriptionAndDetails"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ExplicitTyping"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Identifier"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Metapatterns"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NameStub"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OrganizationOfData"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ParticipantRole"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Partonymy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PropertyReification"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Provenance"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#QuantitiesAndUnits"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sequence"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SpaceTimeAndMovement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SpatialExtent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SpatiotemporalExtent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Stub"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TemporalExtent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trajectory"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tree"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#AgentRole"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Category"/>
+        <NamedIndividual IRI="#AgentsAndRoles"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#Bag"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Category"/>
+        <NamedIndividual IRI="#DescriptionAndDetails"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#Event"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#ExplicitTyping"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#Identifier"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Category"/>
+        <NamedIndividual IRI="#Metapatterns"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#NameStub"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Category"/>
+        <NamedIndividual IRI="#OrganizationOfData"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#ParticipantRole"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#Partonymy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#PropertyReification"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#Provenance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#QuantitiesAndUnits"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#Sequence"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Category"/>
+        <NamedIndividual IRI="#SpaceTimeAndMovement"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#SpatialExtent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#SpatiotemporalExtent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#Stub"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#TemporalExtent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#Trajectory"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pattern"/>
+        <NamedIndividual IRI="#Tree"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#AgentRole"/>
+        <NamedIndividual IRI="#AgentsAndRoles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRelatedPattern"/>
+        <NamedIndividual IRI="#AgentRole"/>
+        <NamedIndividual IRI="#PropertyReification"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#Bag"/>
+        <NamedIndividual IRI="#OrganizationOfData"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRelatedPattern"/>
+        <NamedIndividual IRI="#Bag"/>
+        <NamedIndividual IRI="#Partonymy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#Event"/>
+        <NamedIndividual IRI="#SpaceTimeAndMovement"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#ExplicitTyping"/>
+        <NamedIndividual IRI="#Metapatterns"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#Identifier"/>
+        <NamedIndividual IRI="#DescriptionAndDetails"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#NameStub"/>
+        <NamedIndividual IRI="#DescriptionAndDetails"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#specializationOfPattern"/>
+        <NamedIndividual IRI="#NameStub"/>
+        <NamedIndividual IRI="#Stub"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#ParticipantRole"/>
+        <NamedIndividual IRI="#AgentsAndRoles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#specializationOfPattern"/>
+        <NamedIndividual IRI="#ParticipantRole"/>
+        <NamedIndividual IRI="#AgentRole"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#Partonymy"/>
+        <NamedIndividual IRI="#DescriptionAndDetails"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#PropertyReification"/>
+        <NamedIndividual IRI="#Metapatterns"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#Provenance"/>
+        <NamedIndividual IRI="#DescriptionAndDetails"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#QuantitiesAndUnits"/>
+        <NamedIndividual IRI="#DescriptionAndDetails"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#Sequence"/>
+        <NamedIndividual IRI="#OrganizationOfData"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#SpatialExtent"/>
+        <NamedIndividual IRI="#SpaceTimeAndMovement"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#SpatiotemporalExtent"/>
+        <NamedIndividual IRI="#SpaceTimeAndMovement"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#specializationOfPattern"/>
+        <NamedIndividual IRI="#SpatiotemporalExtent"/>
+        <NamedIndividual IRI="#Trajectory"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#Stub"/>
+        <NamedIndividual IRI="#Metapatterns"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#TemporalExtent"/>
+        <NamedIndividual IRI="#SpaceTimeAndMovement"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#Trajectory"/>
+        <NamedIndividual IRI="#SpaceTimeAndMovement"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMODLCategory"/>
+        <NamedIndividual IRI="#Tree"/>
+        <NamedIndividual IRI="#OrganizationOfData"/>
+    </ObjectPropertyAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
