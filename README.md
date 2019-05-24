@@ -1,6 +1,8 @@
 # MODL: Modular Ontology Design Library
 https://dase.cs.wright.edu/content/modl-modular-ontology-design-library
 
+DOI for v1.0 [![DOI](https://zenodo.org/badge/178051913.svg)](https://zenodo.org/badge/latestdoi/178051913)
+
 ## Documentation
 1. Motivation 
 2. Overview
@@ -17,4 +19,4 @@ Note: When tracking the provenance of the changes, there was an accidental blank
 Here be OWLs.
 
 ## OPLa Ontology
-under construction
+MODL.owl
