@@ -1,0 +1,587 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#"
+     xml:base="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:opla-sd="http://ontologydesignpatterns.org/opla-sd#">
+    <owl:Ontology rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologydesignpatterns.org/opla-sd#entityPosition -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-sd#entityPosition"/>
+    
+
+
+    <!-- http://ontologydesignpatterns.org/opla-sd#entityPositionX -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-sd#entityPositionX"/>
+    
+
+
+    <!-- http://ontologydesignpatterns.org/opla-sd#entityPositionY -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-sd#entityPositionY"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#executedIn -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#executedIn"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasDataType -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasDataType"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasPayload -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasPayload"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#implements -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#implements"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#occursIn -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#occursIn"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsInputRole -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsInputRole"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsOutputRole -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsOutputRole"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsParameterRole -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsParameterRole"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesInputDataRole -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesInputDataRole"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesOutputDataRole -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesOutputDataRole"/>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesParameterRole -->
+
+    <owl:ObjectProperty rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesParameterRole"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Algorithm -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Algorithm">
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">19.949172891330534</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">560.4969248288852</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ComputationalEnvironment -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ComputationalEnvironment">
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.23442734681602</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">560.0395163249185</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataTransformation -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataTransformation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#executedIn"/>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ComputationalEnvironment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#implements"/>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Algorithm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#occursIn"/>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#SpatiotemporalExtent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesInputDataRole"/>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#InputDataRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesOutputDataRole"/>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#OutputDataRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#executedIn"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ComputationalEnvironment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#implements"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Algorithm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#occursIn"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#SpatiotemporalExtent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesInputDataRole"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#InputDataRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesOutputDataRole"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#OutputDataRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesParameterRole"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ParameterRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesParameterRole"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ParameterRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">99.82805895454698</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">120.30152186778034</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataType -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataType">
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">750.3741753499639</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">279.54823750903404</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#EntityWithProvenance -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#EntityWithProvenance">
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">560.3339695739631</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">449.6643719563557</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#InputDataRole -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#InputDataRole">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsInputRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">419.6352206823435</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">49.91022341721451</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#OutputDataRole -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#OutputDataRole">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsOutputRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">420.4018224519531</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">119.94293863456784</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ParameterRole -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ParameterRole">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsParameterRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">389.54354017226535</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">199.70163626022486</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Payload -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Payload">
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">759.6831958806702</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">329.612956677929</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#SpatiotemporalExtent -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#SpatiotemporalExtent">
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">350.3404954525808</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">570.0324421165986</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData -->
+
+    <owl:Class rdf:about="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData">
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#EntityWithProvenance"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasDataType"/>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasPayload"/>
+                <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Payload"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasDataType"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasPayload"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Payload"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsInputRole"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#InputDataRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsOutputRole"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#OutputDataRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsParameterRole"/>
+                <owl:allValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ParameterRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsInputRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#InputDataRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsOutputRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#OutputDataRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsParameterRole"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ParameterRole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">670.3772306607161</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">150.0033090042616</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">130.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">490.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">190.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">480.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">290.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">740.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">290.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">490.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">400.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">240.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">290.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">410.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-50.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">290.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">650.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">670.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">520.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">640.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">440.0</opla-sd:entityPositionX>
+        <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">570.0</opla-sd:entityPositionY>
+        <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#executedIn"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ComputationalEnvironment"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataTransformation"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasDataType"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataType"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#hasPayload"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Payload"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#implements"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#Algorithm"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataTransformation"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#occursIn"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#SpatiotemporalExtent"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataTransformation"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsInputRole"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#InputDataRole"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsOutputRole"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#OutputDataRole"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#performsParameterRole"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ParameterRole"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#aData"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesInputDataRole"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#InputDataRole"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataTransformation"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesOutputDataRole"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#OutputDataRole"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataTransformation"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#providesParameterRole"/>
+        <owl:someValuesFrom rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#ParameterRole"/>
+        <rdfs:subClassOf rdf:resource="https://daselab.cs.ksu.edu/patterns/DataTransformationPattern#DataTransformation"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

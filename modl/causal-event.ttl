@@ -1,0 +1,406 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix kwg-ont: <http://knowwheregraph.com/#> .
+@prefix opla-cp: <http://ontologydesignpatterns.org/opla-cp#> .
+@prefix opla-sd: <http://ontologydesignpatterns.org/opla-sd#> .
+@prefix opla-core: <http://ontologydesignpatterns.org/opla-core#> .
+@base <http://knowwheregraph.com/> .
+
+<http://knowwheregraph.com/> rdf:type owl:Ontology ;
+                              opla-cp:addressesScenario """Direct Relief
+Monsoon after diptheria outbreak"""^^xsd:string ,
+                                                        """Thomas Fire
+Fire causes bad air quality in Goleta. Obvious to us, but not to a model."""^^xsd:string ;
+                              opla-cp:hasCompetencyQuestion "Are there areas in other states than California that are frequently affected by wildfires?"^^xsd:string ,
+                                                            "Farm2Table:  many Space-Time Use Cases already there, but these need clarification of the specific Space-Time semantic functionalities needed"^^xsd:string ,
+                                                            "Given fire x, which regions will be effected by smoke exposure, given current wind direction projections?"^^xsd:string ,
+                                                            "How were the 2019 Southern California fires affecting the tourism industry?"^^xsd:string ,
+                                                            "If I am an agent of an insurance company, what information I can gain from your KWG? (not a competency question, but may help us to think)"^^xsd:string ,
+                                                            "Was the Cholera outbreak in Mozambique contributing to the food shortage in year x?"^^xsd:string ,
+                                                            "What are the causalities of the wildfire? To answer it, we need spatiotemporal information of temperature, precipitation, soil moisture and etc. in the KG."^^xsd:string ,
+                                                            "What factors can you find in a specific region that would help explain e.g. the stroke belt. Which contaminants of farms may be related from the health literature to strokes?"^^xsd:string ,
+                                                            "What farmlands or vegetation covers have been mostly affected in the fire?"^^xsd:string ,
+                                                            "What were the reasons for the landslide east of Santa Barbara in April 2017?"^^xsd:string ,
+                                                            "What were wildfires affecting the Ventura area in the 2010s?"^^xsd:string ,
+                                                            "Where are areas of increased heat exceedance and pollution, where migration is not driven by urbanization?"^^xsd:string ,
+                                                            "Where are the places where heat is rising and migration is occurring that cannot be explained by urbanization?"^^xsd:string ,
+                                                            "Which farm has High productivity and low connectivity?"^^xsd:string ,
+                                                            "Which farm has adopted health soil practice after other nearby farms did so?"^^xsd:string ,
+                                                            "Which farm has experienced disease?"^^xsd:string ,
+                                                            "Which region affected by a transmissive disease is affected by a hurricane?"^^xsd:string ,
+                                                            "Which region affected by the current hurricane just suffers from another natural disaster?"^^xsd:string ,
+                                                            "Which regions affected by wildfires are expected to experience heavy rain (flood risk)"^^xsd:string ,
+                                                            "Which residents are still evacuated from the same region where the second hurricane hit?"^^xsd:string ,
+                                                            "where to deliver Covid-19 supplies?"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla-core#isNativeTo
+opla-core:isNativeTo rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla-core#reusesPatternAsTemplate
+opla-core:reusesPatternAsTemplate rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla-cp#addressesScenario
+opla-cp:addressesScenario rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla-cp#hasCompetencyQuestion
+opla-cp:hasCompetencyQuestion rdf:type owl:AnnotationProperty .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPosition
+opla-sd:entityPosition rdf:type owl:AnnotationProperty ;
+                       opla-core:isNativeTo :Causal_Event_Module .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPositionX
+opla-sd:entityPositionX rdf:type owl:AnnotationProperty ;
+                        opla-core:isNativeTo :Causal_Event_Module .
+
+
+###  http://ontologydesignpatterns.org/opla-sd#entityPositionY
+opla-sd:entityPositionY rdf:type owl:AnnotationProperty ;
+                        opla-core:isNativeTo :Causal_Event_Module .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://knowwheregraph.com#affects
+<http://knowwheregraph.com#affects> rdf:type owl:ObjectProperty ;
+                                    opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#hasConstituent
+<http://knowwheregraph.com#hasConstituent> rdf:type owl:ObjectProperty ;
+                                           opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#hasObservationType
+<http://knowwheregraph.com#hasObservationType> rdf:type owl:ObjectProperty ;
+                                               opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#hasPossiblyCausesRelation
+<http://knowwheregraph.com#hasPossiblyCausesRelation> rdf:type owl:ObjectProperty ;
+                                                      opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#hasResultsInRelation
+<http://knowwheregraph.com#hasResultsInRelation> rdf:type owl:ObjectProperty ;
+                                                 opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#hasSTE
+<http://knowwheregraph.com#hasSTE> rdf:type owl:ObjectProperty ;
+                                   opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#occursOver
+<http://knowwheregraph.com#occursOver> rdf:type owl:ObjectProperty ;
+                                       opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#ofType
+<http://knowwheregraph.com#ofType> rdf:type owl:ObjectProperty ;
+                                   opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#pertainsTo
+<http://knowwheregraph.com#pertainsTo> rdf:type owl:ObjectProperty ;
+                                       opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#possiblyCauses
+<http://knowwheregraph.com#possiblyCauses> rdf:type owl:ObjectProperty ;
+                                           opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+###  http://knowwheregraph.com#resultsIn
+<http://knowwheregraph.com#resultsIn> rdf:type owl:ObjectProperty ;
+                                      opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://knowwheregraph.com#EntityWithProvenance
+<http://knowwheregraph.com#EntityWithProvenance> rdf:type owl:Class ;
+                                                 opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                                 opla-sd:entityPosition [ ] .
+
+
+###  http://knowwheregraph.com#Event-Abstract
+<http://knowwheregraph.com#Event-Abstract> rdf:type owl:Class ;
+                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://knowwheregraph.com#hasPossiblyCausesRelation> ;
+                                                             owl:allValuesFrom <http://knowwheregraph.com#PossiblyCausesRelation>
+                                                           ] ;
+                                           opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                           opla-sd:entityPosition [ ] .
+
+
+###  http://knowwheregraph.com#Event-Concrete
+<http://knowwheregraph.com#Event-Concrete> rdf:type owl:Class ;
+                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://knowwheregraph.com#affects> ;
+                                                             owl:allValuesFrom <http://knowwheregraph.com#Place>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://knowwheregraph.com#hasResultsInRelation> ;
+                                                             owl:allValuesFrom <http://knowwheregraph.com#ResultsInRelation>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://knowwheregraph.com#occursOver> ;
+                                                             owl:allValuesFrom <http://knowwheregraph.com#SpatioTemporalExtent>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://knowwheregraph.com#ofType> ;
+                                                             owl:allValuesFrom <http://knowwheregraph.com#Event-Abstract>
+                                                           ] ;
+                                           opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                           opla-sd:entityPosition [ ] .
+
+
+###  http://knowwheregraph.com#Observation
+<http://knowwheregraph.com#Observation> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://knowwheregraph.com#EntityWithProvenance> ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://knowwheregraph.com#hasObservationType> ;
+                                                          owl:allValuesFrom <http://knowwheregraph.com#ObservationType>
+                                                        ] ;
+                                        opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                        opla-sd:entityPosition [ ] .
+
+
+###  http://knowwheregraph.com#ObservationType
+<http://knowwheregraph.com#ObservationType> rdf:type owl:Class ;
+                                            opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                            opla-sd:entityPosition [ ] .
+
+
+###  http://knowwheregraph.com#Place
+<http://knowwheregraph.com#Place> rdf:type owl:Class ;
+                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://knowwheregraph.com#hasSTE> ;
+                                                    owl:allValuesFrom <http://knowwheregraph.com#SpatioTemporalExtent>
+                                                  ] ;
+                                  opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                  opla-sd:entityPosition [ ] .
+
+
+###  http://knowwheregraph.com#PossiblyCausesRelation
+<http://knowwheregraph.com#PossiblyCausesRelation> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://knowwheregraph.com#EntityWithProvenance> ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://knowwheregraph.com#possiblyCauses> ;
+                                                                     owl:allValuesFrom <http://knowwheregraph.com#Event-Abstract>
+                                                                   ] ;
+                                                   opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                                   opla-sd:entityPosition [ ] .
+
+
+###  http://knowwheregraph.com#ResultsInRelation
+<http://knowwheregraph.com#ResultsInRelation> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://knowwheregraph.com#EntityWithProvenance> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://knowwheregraph.com#resultsIn> ;
+                                                                owl:allValuesFrom <http://knowwheregraph.com#StateOfAffairs>
+                                                              ] ;
+                                              opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                              opla-sd:entityPosition [ ] .
+
+
+###  http://knowwheregraph.com#SpatioTemporalExtent
+<http://knowwheregraph.com#SpatioTemporalExtent> rdf:type owl:Class ;
+                                                 opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                                 opla-sd:entityPosition [ ] .
+
+
+###  http://knowwheregraph.com#StateOfAffairs
+<http://knowwheregraph.com#StateOfAffairs> rdf:type owl:Class ;
+                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://knowwheregraph.com#hasConstituent> ;
+                                                             owl:allValuesFrom <http://knowwheregraph.com#Observation>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://knowwheregraph.com#pertainsTo> ;
+                                                             owl:allValuesFrom <http://knowwheregraph.com#SpatioTemporalExtent>
+                                                           ] ;
+                                           opla-core:isNativeTo <http://knowwheregraph.com#Causal_Event_Module> ;
+                                           opla-sd:entityPosition [ ] .
+
+
+###  http://ontologydesignpatterns.org/opla-core#Module
+opla-core:Module rdf:type owl:Class .
+
+
+###  http://ontologydesignpatterns.org/opla-core#Pattern
+opla-core:Pattern rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://knowwheregraph.com#Causal_Event_Module
+<http://knowwheregraph.com#Causal_Event_Module> rdf:type owl:NamedIndividual ,
+                                                         opla-core:Module ;
+                                                opla-core:reusesPatternAsTemplate <https://archive.org/services/purl/domain/modular_ontology_design_library/causalevent> ;
+                                                opla-sd:entityPosition [ ] .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/causalevent
+<https://archive.org/services/purl/domain/modular_ontology_design_library/causalevent> rdf:type owl:NamedIndividual ,
+                                                                                                opla-core:Pattern ;
+                                                                                       rdfs:label "Causal Event"^^xsd:string .
+
+
+[ opla-sd:entityPositionX "440.0"^^xsd:double ;
+  opla-sd:entityPositionY "470.0"^^xsd:double ;
+  rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+] .
+
+[ opla-sd:entityPositionX "50.0"^^xsd:double ;
+   opla-sd:entityPositionY "150.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ opla-sd:entityPositionX "660.0"^^xsd:double ;
+   opla-sd:entityPositionY "70.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ opla-sd:entityPositionX "20.0"^^xsd:double ;
+   opla-sd:entityPositionY "20.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ opla-sd:entityPositionX "450.0"^^xsd:double ;
+   opla-sd:entityPositionY "240.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ opla-sd:entityPositionX "670.2917545430142"^^xsd:double ;
+   opla-sd:entityPositionY "249.86427160379844"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ opla-sd:entityPositionX "650.0"^^xsd:double ;
+   opla-sd:entityPositionY "410.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ opla-sd:entityPositionX "160.0"^^xsd:double ;
+   opla-sd:entityPositionY "470.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ opla-sd:entityPositionX "180.0"^^xsd:double ;
+   opla-sd:entityPositionY "240.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ opla-sd:entityPositionX "150.0"^^xsd:double ;
+   opla-sd:entityPositionY "70.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+[ opla-sd:entityPositionX "180.0"^^xsd:double ;
+   opla-sd:entityPositionY "320.0"^^xsd:double ;
+   rdfs:comment "This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view."@en
+ ] .
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+   owl:onProperty <http://knowwheregraph.com#affects> ;
+   owl:someValuesFrom <http://knowwheregraph.com#Place> ;
+   rdfs:subClassOf <http://knowwheregraph.com#Event-Concrete>
+ ] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#hasConstituent> ;
+  owl:someValuesFrom <http://knowwheregraph.com#Observation> ;
+  rdfs:subClassOf <http://knowwheregraph.com#StateOfAffairs>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#hasObservationType> ;
+  owl:someValuesFrom <http://knowwheregraph.com#ObservationType> ;
+  rdfs:subClassOf <http://knowwheregraph.com#Observation>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#hasPossiblyCausesRelation> ;
+  owl:someValuesFrom <http://knowwheregraph.com#PossiblyCausesRelation> ;
+  rdfs:subClassOf <http://knowwheregraph.com#Event-Abstract>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#hasResultsInRelation> ;
+  owl:someValuesFrom <http://knowwheregraph.com#ResultsInRelation> ;
+  rdfs:subClassOf <http://knowwheregraph.com#Event-Concrete>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#hasSTE> ;
+  owl:someValuesFrom <http://knowwheregraph.com#SpatioTemporalExtent> ;
+  rdfs:subClassOf <http://knowwheregraph.com#Place>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#occursOver> ;
+  owl:someValuesFrom <http://knowwheregraph.com#SpatioTemporalExtent> ;
+  rdfs:subClassOf <http://knowwheregraph.com#Event-Concrete>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#ofType> ;
+  owl:someValuesFrom <http://knowwheregraph.com#Event-Abstract> ;
+  rdfs:subClassOf <http://knowwheregraph.com#Event-Concrete>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#pertainsTo> ;
+  owl:someValuesFrom <http://knowwheregraph.com#SpatioTemporalExtent> ;
+  rdfs:subClassOf <http://knowwheregraph.com#StateOfAffairs>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#possiblyCauses> ;
+  owl:someValuesFrom <http://knowwheregraph.com#Event-Abstract> ;
+  rdfs:subClassOf <http://knowwheregraph.com#PossiblyCausesRelation>
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty <http://knowwheregraph.com#resultsIn> ;
+  owl:someValuesFrom <http://knowwheregraph.com#StateOfAffairs> ;
+  rdfs:subClassOf <http://knowwheregraph.com#ResultsInRelation>
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,126 @@
+@prefix : <http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kwgr: <http://stko-roy.geog.ucsb.edu/lod/resource/> .
+@prefix modl: <https://archive.org/services/purl/domain/modular_ontology_design_library> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix kwg-ont: <http://stko-roy.geog.ucsb.edu/lod/ontology/> .
+@prefix kwg-pat: <http://stko-roy.geog.ucsb.edu/lod/patterns#> .
+@prefix opla-cp: <http://ontologydesignpatterns.org/opla-cp#> .
+@prefix opla-sd: <http://ontologydesignpatterns.org/opla-sd#> .
+@prefix opla-core: <http://ontologydesignpatterns.org/opla-core#> .
+@base <http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations> .
+
+<http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations> rdf:type owl:Ontology ;
+                                                            opla-core:hasPatternName "Cell Relations Pattern" ;
+                                                            opla-cp:addressesScenario """Use Case
+Use Case Description"""^^xsd:string ;
+                                                            opla-cp:hasCompetencyQuestion "cq1"^^xsd:string ,
+                                                                                          "cq2"^^xsd:string ;
+                                                            opla-sd:hasConnections """Cell isAdjacentTo Cell
+Cell contains Cell
+Cell spatialRelations Geometry
+Cell subclass Geometry
+Feature hasGeometry Geometry existential
+Feature hasAttribute Attribute
+Region hasGeometry Geometry existential 
+Region hasAttribute Attribute
+Attribute hasValue Quantity existential
+Attribute subclass Provenance"""^^xsd:string ;
+                                                            opla-core:hasShortcutFor """spatiallyRelated spatialRelations hasGeometry$^-$"""^^xsd:string ;
+                                                            opla-sd:hasSchemaDiagramFileName "cell-relations-pattern.pdf"^^xsd:string ;
+                                                            opla-sd:hasShortcutDiagramFileName "cell-relations-shortcuts.pdf"^^xsd:string ;
+                                                            dc:contributor "Alicia Scheill" ,
+                                                                           "Dalia Varanka" ,
+                                                                           "Dean Rehberger" ,
+                                                                           "Gengchen Mai" ,
+                                                                           "Krzysztof Janowicz" ,
+                                                                           "Ling Cai" ,
+                                                                           "Lu Zhou" ,
+                                                                           "Lynn E. Usery" ,
+                                                                           "Mark Schildhauer" ,
+                                                                           "Rui Zhu" ;
+                                                            dc:creator "Cogan Shimizu" ,
+                                                                       "Joseph Zalewski" ,
+                                                                       "Pascal Hitzler" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://ontologydesignpatterns.org/opla-core#hasPatternName
+opla-core:hasPatternName rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#contains
+:contains rdf:type owl:ObjectProperty .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#hasAttribute
+:hasAttribute rdf:type owl:ObjectProperty .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#hasGeometry
+:hasGeometry rdf:type owl:ObjectProperty .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#hasValue
+:hasValue rdf:type owl:ObjectProperty .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#isAdjacentTo
+:isAdjacentTo rdf:type owl:ObjectProperty .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#spatialRelations
+:spatialRelations rdf:type owl:ObjectProperty .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#spatiallyRelated
+:spatiallyRelated rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#Attribute
+:Attribute rdf:type owl:Class .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#Cell
+:Cell rdf:type owl:Class .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#Feature
+:Feature rdf:type owl:Class .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#Geometry
+:Geometry rdf:type owl:Class .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#Provenance
+:Provenance rdf:type owl:Class .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#Quantity
+:Quantity rdf:type owl:Class .
+
+
+###  http://stko-roy.geog.ucsb.edu/lod/patterns/cell-relations#Region
+:Region rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
