@@ -1,0 +1,213 @@
+@prefix : <http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10> .
+
+<http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#definedAs
+:definedAs rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#describedAs
+:describedAs rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#hasMappingRelation
+:hasMappingRelation rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isMemberOf .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#mapsOnto
+:mapsOnto rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#organizedBy
+:organizedBy rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#semanticRelation
+:semanticRelation rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#mappingMeasure
+:mappingMeasure rdf:type owl:DatatypeProperty ;
+                rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#measurementUnit
+:measurementUnit rdf:type owl:DatatypeProperty ;
+                 rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#synonym
+:synonym rdf:type owl:DatatypeProperty ;
+         rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#vernacularName
+:vernacularName rdf:type owl:DatatypeProperty ;
+                rdfs:range rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#Concept
+:Concept rdf:type owl:Class ;
+         rdfs:subClassOf [ owl:intersectionOf ( :EntityWithProvenance
+                                                :EntityWithTemporalScope
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :definedAs ;
+                           owl:allValuesFrom :Definition
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :describedAs ;
+                           owl:allValuesFrom :Description
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :semanticRelation ;
+                           owl:allValuesFrom :Concept
+                         ] .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#ConceptCollection
+:ConceptCollection rdf:type owl:Class ;
+                   rdfs:subClassOf :Concept ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasMember ;
+                                     owl:someValuesFrom :Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasMember ;
+                                     owl:allValuesFrom :Concept
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :organizedBy ;
+                                     owl:allValuesFrom :OrganizationScheme
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :organizedBy ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :OrganizationScheme
+                                   ] .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#Definition
+:Definition rdf:type owl:Class ;
+            rdfs:subClassOf :Description .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#Description
+:Description rdf:type owl:Class ;
+             rdfs:subClassOf [ owl:intersectionOf ( :EntityWithProvenance
+                                                    :EntityWithTemporalScope
+                                                  ) ;
+                               rdf:type owl:Class
+                             ] .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#EntityWithProvenance
+:EntityWithProvenance rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#EntityWithTemporalScope
+:EntityWithTemporalScope rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#MappingRelation
+:MappingRelation rdf:type owl:Class ;
+                 rdfs:subClassOf [ owl:intersectionOf ( :EntityWithProvenance
+                                                        :EntityWithTemporalScope
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :mapsOnto ;
+                                   owl:someValuesFrom :Concept
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty [ owl:inverseOf :hasMappingRelation
+                                                  ] ;
+                                   owl:someValuesFrom :Concept
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :mapsOnto ;
+                                   owl:allValuesFrom :Concept
+                                 ] .
+
+
+###  http://www.semanticweb.org/cogan/ontologies/2022/10/untitled-ontology-10#OrganizationScheme
+:OrganizationScheme rdf:type owl:Class .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :definedAs ;
+  owl:someValuesFrom :Definition ;
+  rdfs:subClassOf :Concept
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :describedAs ;
+  owl:someValuesFrom :Description ;
+  rdfs:subClassOf :Concept
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :hasMember ;
+  owl:someValuesFrom :Concept ;
+  rdfs:subClassOf :Concept
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :mapsOnto ;
+  owl:someValuesFrom :Concept ;
+  rdfs:subClassOf :MappingRelation
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :organizedBy ;
+  owl:someValuesFrom :OrganizationScheme ;
+  rdfs:subClassOf :ConceptCollection
+] .
+
+
+[ rdf:type owl:Restriction ;
+  owl:onProperty :semanticRelation ;
+  owl:someValuesFrom :Concept ;
+  rdfs:subClassOf :Concept
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
