@@ -1,11 +1,11 @@
-\section{recurrent-event}
+\section{Recurrent Event}
 \label{sec:recurrent-event}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=.8\textwidth]{figures/placeholder}
+%\includegraphics[width=.8\textwidth]{figures/recurrent-event}
 \end{center}
-\caption{Schema Diagram for the recurrent-event Pattern. The visual notation is explained in Chapter \ref{chap:prelims}.}
+\caption{Schema Diagram for the Recurrent Event Pattern. The visual notation is explained in Chapter \ref{chap:prelims}.}
 \label{fig:recurrent-event}
 \end{figure}
 \subsection{Summary}
@@ -18,11 +18,13 @@ A recurrent event series is modelled as an intersection of a collection and a si
 \label{axs:recurrent-event}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{align}
-% General Axioms\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
+% General Axioms
+\textsf{RecurrentEventSeries} \sqsubseteq\textsf{dul:Collection} \sqcap \textsf{dul:Situation} \\
+\textsf{RecurrentEventSeries} \equiv \exists \textsf{hasMemberEvent.}  &
+(\geq \textfs{0hasNextEvent.Event \sqcup}  &
+\geq \textfs{0hasPreviousEvent.Event})
 % Domain and Range Restrictions\top &\sqsubseteq \forall\textsf{place.Holder} \\ 
-\exists\textsf{place.Holder} &\sqsubseteq \top 
-% Inverse Aliases (if any)placeholder &\equiv holderplace^- 
+% Inverse Aliases (if any) 
 \end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -44,8 +46,6 @@ A recurrent event series is modelled as an intersection of a collection and a si
     \item What are the unifying criteria shared by all the events in a recurrent event series?
     \item Which is the (immediate) next event in a recurrent event series?
     \item Which is the (immediate) previous event in a recurrent event series?
-    \item What is the context or situation of something? 
-    \item What are the things present in this context or situation?
 \end{enumerate}
 
 \newpage
