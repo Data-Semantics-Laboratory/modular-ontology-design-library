@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://archive.org/services/purl/domain/modular_ontology_design_library/sosa"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://archive.org/services/purl/domain/modular_ontology_design_library/sosa">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#FeatureOfInterest"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObservableProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhenomenonTime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Procedure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Result"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResultTime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SimpleResult"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFeatureOfInterest"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPhenomenonTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResult"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResultTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSimpleResult"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isHostedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isObservedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#observedProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usedProcedure"/>
+    </Declaration>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFeatureOfInterest"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPhenomenonTime"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResult"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResultTime"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSimpleResult"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isHostedBy"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isObservedBy"/>
+        <Class IRI="#ObservableProperty"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#observedProperty"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usedProcedure"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFeatureOfInterest"/>
+        <Class IRI="#FeatureOfInterest"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPhenomenonTime"/>
+        <Class IRI="#PhenomenonTime"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasResult"/>
+        <Class IRI="#Result"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasResultTime"/>
+        <Class IRI="#ResultTime"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSimpleResult"/>
+        <Class IRI="#SimpleResult"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isHostedBy"/>
+        <Class IRI="#Platform"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isObservedBy"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#observedProperty"/>
+        <Class IRI="#ObservableProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usedProcedure"/>
+        <Class IRI="#Procedure"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
