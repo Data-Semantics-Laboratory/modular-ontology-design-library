@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://archive.org/services/purl/domain/modular_ontology_design_library/geosparql"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://archive.org/services/purl/domain/modular_ontology_design_library/geosparql">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="geo" IRI="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html"/>
+    <Prefix name="ogc" IRI="https://www.w3.org/2015/spatial/wiki/Main_Page"/>
+    <Declaration>
+        <Class IRI="#?"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#?
+"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ogc:geomLiteral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#Feature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#FeatureCollection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#Geometry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#GeometryCollection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObjectCollection"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Simple_Features,_Egenhofer,_&amp;_RCC8_relations"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dimensions &amp; resolutions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#geo:hasSerialization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#geo:hasSize"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#rdfs:member"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#rdfs:member
+"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#rdfs:member
+
+"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#geo:hasMetricSize"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://ontologydesignpatterns.org/opla-sd#entityPosition"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://ontologydesignpatterns.org/opla-sd#entityPositionY"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://ontologydesignpatterns.org/opla-sd#entityPositionX"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#Feature"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#FeatureCollection"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObjectCollection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#Geometry"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#GeometryCollection"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObjectCollection"/>
+    </SubClassOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dimensions &amp; resolutions"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#Geometry"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#geo:hasSerialization"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#Geometry"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#geo:hasSize"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObject"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#rdfs:member"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#FeatureCollection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#rdfs:member"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#GeometryCollection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#rdfs:member"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObjectCollection"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dimensions &amp; resolutions"/>
+        <Class IRI="#?"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#geo:hasSerialization"/>
+        <Class IRI="#ogc:geomLiteral"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#geo:hasSize"/>
+        <Class IRI="#?"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#rdfs:member"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#Geometry"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#rdfs:member"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#Feature"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#rdfs:member"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObject"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#geo:hasMetricSize"/>
+        <Class IRI="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialObject"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#geo:hasMetricSize"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
