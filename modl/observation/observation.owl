@@ -1,148 +1,128 @@
-<?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="https://archive.org/services/purl/domain/modular_ontology_design_library/sosa"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://archive.org/services/purl/domain/modular_ontology_design_library/sosa">
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Declaration>
-        <Class IRI="#FeatureOfInterest"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ObservableProperty"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Observation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PhenomenonTime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Platform"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Procedure"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Result"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ResultTime"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sensor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SimpleResult"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasFeatureOfInterest"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPhenomenonTime"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasResult"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasResultTime"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSimpleResult"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isHostedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isObservedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#observedProperty"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usedProcedure"/>
-    </Declaration>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasFeatureOfInterest"/>
-        <Class IRI="#Observation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasPhenomenonTime"/>
-        <Class IRI="#Observation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasResult"/>
-        <Class IRI="#Observation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasResultTime"/>
-        <Class IRI="#Observation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasSimpleResult"/>
-        <Class IRI="#Observation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isHostedBy"/>
-        <Class IRI="#Sensor"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isObservedBy"/>
-        <Class IRI="#ObservableProperty"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#observedProperty"/>
-        <Class IRI="#Observation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#usedProcedure"/>
-        <Class IRI="#Observation"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasFeatureOfInterest"/>
-        <Class IRI="#FeatureOfInterest"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasPhenomenonTime"/>
-        <Class IRI="#PhenomenonTime"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasResult"/>
-        <Class IRI="#Result"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasResultTime"/>
-        <Class IRI="#ResultTime"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasSimpleResult"/>
-        <Class IRI="#SimpleResult"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isHostedBy"/>
-        <Class IRI="#Platform"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#isObservedBy"/>
-        <Class IRI="#Sensor"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#observedProperty"/>
-        <Class IRI="#ObservableProperty"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#usedProcedure"/>
-        <Class IRI="#Procedure"/>
-    </ObjectPropertyRange>
-</Ontology>
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+<https://archive.org/services/purl/domain/modular_ontology_design_library/observation> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#hasFeatureOfInterest
+:hasFeatureOfInterest rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Observation ;
+                      rdfs:range :FeatureOfInterest .
 
 
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#hasPhenomenonTime
+:hasPhenomenonTime rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Observation ;
+                   rdfs:range :TemporalEntity .
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#hasResult
+:hasResult rdf:type owl:ObjectProperty ;
+           rdfs:domain :Observation ;
+           rdfs:range :Result .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#hasResultTime
+:hasResultTime rdf:type owl:ObjectProperty ;
+               rdfs:domain :Observation ;
+               rdfs:range :TemporalEntity .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#hasSimpleResult
+:hasSimpleResult rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Observation .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#observedProperty
+:observedProperty rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Observation ;
+                  rdfs:range :ObservableProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#hasSimpleResult
+:hasSimpleResult rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#EntityWithProvenance
+:EntityWithProvenance rdf:type owl:Class .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#FeatureOfInterest
+:FeatureOfInterest rdf:type owl:Class .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#ObservableProperty
+:ObservableProperty rdf:type owl:Class .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#Observation
+:Observation rdf:type owl:Class ;
+             rdfs:subClassOf :EntityWithProvenance ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasFeatureOfInterest ;
+                               owl:allValuesFrom :FeatureOfInterest
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasResult ;
+                               owl:allValuesFrom :Result
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :observedProperty ;
+                               owl:allValuesFrom :ObservableProperty
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasResult ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Result
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasFeatureOfInterest ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :FeatureOfInterest
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasPhenomenonTime ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :TemporalEntity
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasResultTime ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :TemporalEntity
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :observedProperty ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :ObservableProperty
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasSimpleResult ;
+                               owl:minCardinality "1"^^xsd:nonNegativeInteger
+                             ] .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#Result
+:Result rdf:type owl:Class .
+
+
+###  https://archive.org/services/purl/domain/modular_ontology_design_library/observation#TemporalEntity
+:TemporalEntity rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
